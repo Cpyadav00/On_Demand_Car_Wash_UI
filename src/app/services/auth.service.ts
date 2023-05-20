@@ -1,0 +1,74 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
+import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+
+  private baseUrl:string="https://localhost:44354/api/UserDetail/";
+
+  private userPayload:any;
+
+  constructor(
+    private http:HttpClient,
+    private route:Router
+
+    ) {
+      this.userPayload=this.decodedToken();
+     }
+
+  signUp(userObj:any){
+    return this.http.post<any>(`${this.baseUrl}Registration`,userObj);
+
+  }
+  logIn(loginObj:any)
+  {
+    return this.http.post<any>(`${this.baseUrl}Login`,loginObj);
+
+  }
+//
+signOut()
+{
+  localStorage.clear();
+ this.route.navigate(['login'])
+}
+
+//To Store the token in local storage
+  storeToken(tokenValue:string){
+    localStorage.setItem('token',tokenValue);
+  }
+//To get the token from local storage
+  getToken(){
+    return localStorage.getItem('token');
+  }
+//Use token to check logged in or not
+  isLoggedIn():boolean{
+    return !!localStorage.getItem('token');
+  }
+
+decodedToken(){
+const jwtHelper=new JwtHelperService();
+const token=this.getToken()!; //! beacuse it can be independent
+console.log(jwtHelper.decodeToken(token));
+return jwtHelper.decodeToken(token);
+}
+
+getFullNameFromToken(){
+if(this.userPayload){
+ // console.log(this.userPayload.name)
+return this.userPayload.name;
+}
+}
+
+getRoleFromToken(){
+  if(this.userPayload){
+  //  console.log(this.userPayload.role)
+  return this.userPayload.role;
+  }
+
+}
+
+}
