@@ -14,19 +14,19 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="file"></span>
+                <span data-feather="orders"></span>
                 Orders
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="shopping-cart"></span>
-                Products
+              <a class="nav-link" href="#" routerLink="services">
+                <span data-feather="servives"></span>
+                Services
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="users"></span>
+                <span data-feather="customer"></span>
                 Customers
               </a>
             </li>
@@ -92,23 +92,30 @@
         <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
          <div>
           <table class="table">
-            <thead class="thead-dark">
+            <thead class="thead">
               <tr>
                 <th scope="col">UserId</th>
+                <th scope="col">User Name</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Role</th>
+                <th scope="col">Status</th>
+                <th scope="col">Buttons</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let item of users">
                 <th scope="row">{{item.userId}}</th>
+                <th scope="row">{{item.email}}</th>
                 <td>{{item.firstName}}</td>
                 <td>{{item.lastName}}</td>
                 <td>{{item.role}}</td>
-                <button type="button" class="btn btn-outline-secondary">Edit</button>
-                <button type="button" class="btn btn-outline-secondary">Update</button>
-                <button type="button" class="btn btn-outline-secondary">Delete</button>
+                <td>{{item.status}}</td>
+
+               <td>
+                <button type="button" class="btn btn-outline-secondary" routerLink="editForm">Update</button>
+                <button type="button" class="btn btn-outline-secondary" routerLink="admin">Delete</button>
+                </td>
               </tr>
             </tbody>
           </table>

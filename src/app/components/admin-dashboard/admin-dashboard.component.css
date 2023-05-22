@@ -12,10 +12,15 @@
   }
 }
 .table{
-  width: 1600px;
+
 }
 
 button
 {
   margin-left: 10px;
+}
+
+.thead{
+background-color: rgb(176, 170, 170);
+
 }

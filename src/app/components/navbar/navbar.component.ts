@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -7,7 +8,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor(private auth:AuthService
+  constructor(private auth:AuthService,
+    private router:Router
     ){}
 
     public role:string="";
@@ -21,6 +23,13 @@ export class NavbarComponent {
     this.auth.signOut();
   }
 
-
+  isRole(){
+    if(this.auth.getRoleFromToken()=='Admin')
+    this.router.navigate(['admin'])
+    else if(this.auth.getRoleFromToken()=='Customer')
+    this.router.navigate(['customer'])
+    else if(this.auth.getRoleFromToken()=='Washer')
+    this.router.navigate(['washer'])
+  }
 
 }

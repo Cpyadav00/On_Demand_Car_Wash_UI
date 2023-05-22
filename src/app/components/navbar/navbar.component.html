@@ -8,7 +8,7 @@
       <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
       <ul class="nav-list">
         <li>
-          <a *ngIf="isLoggedIn()"  routerLink="dashboard" >Dashboard</a>
+          <a (click)="isRole()" *ngIf="isLoggedIn()" >Dashboard</a>
         </li>
         <li>
           <a routerLink="home" >Home</a>

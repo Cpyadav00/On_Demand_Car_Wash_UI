@@ -13,6 +13,9 @@ import { NgToastModule } from 'ng-angular-popup';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CustomerDashboardComponent } from './components/customer-dashboard/customer-dashboard.component';
+import { WasherDashboardComponent } from './components/washer-dashboard/washer-dashboard.component';
+import { CustomerFormComponent } from './components/admin-dashboard/customer-form/customer-form.component';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LoginComponent,
     SignupComponent,
     AdminDashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    CustomerDashboardComponent,
+    WasherDashboardComponent,
+    CustomerFormComponent
   ],
   imports: [
     BrowserModule,
