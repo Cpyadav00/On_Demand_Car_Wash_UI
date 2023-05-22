@@ -41,7 +41,11 @@ loginForm!:FormGroup;
           const tokenPaylad=this.auth.decodedToken();
           this.userStore.setFullNameForStore(tokenPaylad.name)
           this.userStore.setRoleForStore(tokenPaylad.role)
-          this.router.navigate(['dashboard']);
+          if(tokenPaylad.role == 'Admin')
+          this.router.navigate(['dashboard'])
+          else
+          this.router.navigate(['home'])
+
 
         }
         //to print error

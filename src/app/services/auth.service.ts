@@ -58,14 +58,12 @@ return jwtHelper.decodeToken(token);
 
 getFullNameFromToken(){
 if(this.userPayload){
- // console.log(this.userPayload.name)
-return this.userPayload.name;
+return this.userPayload.unique_name;
 }
 }
 
 getRoleFromToken(){
   if(this.userPayload){
-  //  console.log(this.userPayload.role)
   return this.userPayload.role;
   }
 

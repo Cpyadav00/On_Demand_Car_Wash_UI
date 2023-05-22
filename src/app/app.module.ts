@@ -12,6 +12,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgToastModule } from 'ng-angular-popup';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     AllPackageComponent,
     LoginComponent,
     SignupComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -34,10 +37,12 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     useClass:TokenInterceptor,
     multi:true
   }
-  
+
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor(){}
+
 
  }

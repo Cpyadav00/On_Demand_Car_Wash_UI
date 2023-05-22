@@ -38,7 +38,11 @@ this.userStore.getRoleFromStore()
 
 }
 
-
+isRole(){
+if(this.roles=="Admin")
+return true;
+return false;
+}
 
 
 }
