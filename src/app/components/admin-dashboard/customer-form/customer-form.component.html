@@ -1,6 +1,6 @@
 <body class="container-fluid">
   <div class="container" id="loginform">
-    <h2 class="login-title"></h2>
+    <h2 class="login-title">Sign Up</h2>
 
     <form class="login-form" [formGroup]="editForm">
 
@@ -86,7 +86,7 @@
 
 
       <button
-       class="btn btn--form" type="submit" >
+       class="btn btn--form" type="submit" value="Log in" routerLink="admin" (click)="populateData()">
         Save Changes
       </button>
 

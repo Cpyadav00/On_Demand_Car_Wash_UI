@@ -5,6 +5,7 @@ import { NgToastService } from 'ng-angular-popup';
 import { forkJoin } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserStoreService } from 'src/app/services/user-store.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -34,7 +35,6 @@ loginForm!:FormGroup;
       this.auth.logIn(this.loginForm.value)
       .subscribe({
         next:(res)=>{
-         // alert(res.message);
           this.toast.success({detail:"SUCCESS",summary:res.message,duration:5000});
           this.loginForm.reset();
           this.auth.storeToken(res.token);

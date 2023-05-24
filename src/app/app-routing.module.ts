@@ -9,6 +9,9 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { CustomerDashboardComponent } from './components/customer-dashboard/customer-dashboard.component';
 import { WasherDashboardComponent } from './components/washer-dashboard/washer-dashboard.component';
 import { CustomerFormComponent } from './components/admin-dashboard/customer-form/customer-form.component';
+import { FormForPackageComponent } from './components/all-package/form-for-package/form-for-package.component';
+import { OrderFormComponent } from './components/order-form/order-form.component';
+
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -19,7 +22,9 @@ const routes: Routes = [
   {path:'customer', component:CustomerDashboardComponent,canActivate:[AuthGuard]},
   {path:'washer', component:WasherDashboardComponent,canActivate:[AuthGuard]},
   {path:'admin/services', component:AllPackageComponent,canActivate:[AuthGuard]},
-  {path:'admin/editForm', component:CustomerFormComponent,canActivate:[AuthGuard]},
+  {path:'admin/form', component:CustomerFormComponent,canActivate:[AuthGuard]},
+  {path:'admin/services/form', component:FormForPackageComponent,canActivate:[AuthGuard]},
+  {path:'home/form', component:OrderFormComponent,canActivate:[AuthGuard]},
 
 ];
 

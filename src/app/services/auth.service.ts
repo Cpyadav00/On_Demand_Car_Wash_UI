@@ -52,7 +52,7 @@ signOut()
 decodedToken(){
 const jwtHelper=new JwtHelperService();
 const token=this.getToken()!; //! beacuse it can be independent
-console.log(jwtHelper.decodeToken(token));
+//console.log(jwtHelper.decodeToken(token));
 return jwtHelper.decodeToken(token);
 }
 

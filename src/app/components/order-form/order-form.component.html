@@ -1,0 +1,121 @@
+<body class="container-fluid">
+  <div class="container" id="orderForm">
+    <h2 class="order-title">Order Details</h2>
+
+    <form class="order-form" [formGroup]="orderFormData">
+      <div class="row">
+        <div class="col-md-6 box">
+          <div class="col-md-12">
+            <label for="carName">Car Name</label>
+            <input formControlName="carName"
+                   id="carName"
+                   type="text"
+                   placeholder="Car Name"
+                   name="carName"
+                   required
+            />
+            <small *ngIf="orderFormData.controls['carName'].dirty && orderFormData.hasError('required', 'carName')"
+                   class="text-danger">*Car Name is required</small>
+          </div>
+        </div>
+        <div class="col-md-6 box">
+          <div class="col-md-12">
+            <label for="carModel">Car Model</label>
+            <input formControlName="carModel"
+                   id="carModel"
+                   type="text"
+                   placeholder="Car Model"
+                   name="carModel"
+                   required
+            />
+            <small *ngIf="orderFormData.controls['carModel'].dirty && orderFormData.hasError('required', 'carModel')"
+                   class="text-danger">*Car Model is required</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 box">
+          <div class="col-md-12">
+            <label for="address">Address</label>
+            <input formControlName="address"
+                   id="address"
+                   type="text"
+                   placeholder="Address"
+                   name="address"
+                   required
+            />
+            <small *ngIf="orderFormData.controls['address'].dirty && orderFormData.hasError('required', 'address')"
+                   class="text-danger">*Address is required</small>
+          </div>
+        </div>
+        <div class="col-md-6 box">
+          <div class="col-md-12">
+            <label for="city">City</label>
+            <input formControlName="city"
+                   id="city"
+                   type="text"
+                   placeholder="City"
+                   name="city"
+                   required
+            />
+            <small *ngIf="orderFormData.controls['city'].dirty && orderFormData.hasError('required', 'city')"
+                   class="text-danger">*City is required</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 box">
+          <div class="col-md-12">
+            <label for="state">State</label>
+            <input formControlName="state"
+                   id="state"
+                   type="text"
+                   placeholder="State"
+                   name="state"
+                   required
+            />
+            <small *ngIf="orderFormData.controls['state'].dirty && orderFormData.hasError('required', 'state')"
+                   class="text-danger">*State is required</small>
+          </div>
+        </div>
+        <div class="col-md-6 box">
+          <div class="col-md-12">
+            <label for="pincode">Pincode</label>
+            <input formControlName="pincode"
+                   id="pincode"
+                   type="number"
+                   placeholder="Pincode"
+                   name="pincode"
+                   required
+            />
+            <small *ngIf="orderFormData.controls['pincode'].dirty && orderFormData.hasError('required', 'pincode')"
+                   class="text-danger">*Pincode is required</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 box">
+          <div class="col-md-12">
+            <label for="country">Country</label>
+            <input formControlName="country"
+                   id="country"
+                   type="text"
+                   placeholder="Country"
+                   name="country"
+                   required
+            />
+            <small *ngIf="orderFormData.controls['country'].dirty && orderFormData.hasError('required', 'country')"
+                   class="text-danger">*Country is required</small>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn--form" type="submit" value="Sign Up" (click)="onSave()">
+        Sign Up
+      </button>
+    </form>
+  </div>
+</body>

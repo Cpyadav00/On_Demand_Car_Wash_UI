@@ -1,4 +1,5 @@
 <div>
+  <button type="button" class="btn btn-outline-secondary mt-2 mb-3" routerLink="form">Add New</button>
   <table class="table">
     <thead class="thead">
       <tr>
@@ -19,8 +20,8 @@
         <td>{{item.status}}</td>
 
        <td>
-        <button type="button" class="btn btn-outline-secondary">Update</button>
-        <button type="button" class="btn btn-outline-secondary">Delete</button>
+        <button type="button" class="btn btn-outline-secondary" routerLink="form">Update</button>
+        <button type="button" class="btn btn-outline-secondary" (click)="deletePackage(item.id)">Delete</button>
         </td>
       </tr>
     </tbody>
