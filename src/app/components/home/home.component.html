@@ -16,7 +16,7 @@
 			</p>
 
 			<div class="d-grid gap-2 d-md-flex justify-content-center">
-				<button type="submit"
+				<button type="submit" routerLink="contact"
 						class="btn btn-dark btn-lg col-md-4 " id="contactusbutton">
 						Contact Us
 				</button>
@@ -79,7 +79,7 @@
         </p>
         <ng-container>
                  <button type="submit" *ngIf="isLoggedIn"  routerLink="form"
-          class="btn btn-dark btn-lg col-md-4 box " >
+          class="btn btn-dark btn-lg col-md-4 box  " >
           Book
         </button>
         </ng-container>
@@ -164,7 +164,7 @@
 			</p>
 
 			</div>
-			<div class="col-md-4" id="footer-col2">
+			<div class="col-md-4" id="footer-col2" >
 			<h3>Contact Us</h3>
 
 <p>Call Us- 1800-121-6532</p>
@@ -190,8 +190,8 @@
 					We'll never share your email with anyone else.
 				</div>
 				</div>
-				<button type="submit"
-						class="btn btn-dark btn-lg col-md-4 ">
+				<button type="submit" id="submitButton"
+						class="btn btn-dark btn-lg col-md-4">
 						Submit
 				</button>
 			</form>

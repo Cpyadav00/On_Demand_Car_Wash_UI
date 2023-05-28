@@ -7,13 +7,13 @@
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
+              <a class="nav-link active" aria-current="page" href="#" >
                 <span data-feather="home"></span>
                 Admin Dashboard
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="#" routerLink="orders">
                 <span data-feather="orders"></span>
                 Orders
               </a>
@@ -25,15 +25,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="customer"></span>
-                Customers
+              <a class="nav-link" href="#" routerLink="allUsers">
+                <span data-feather="allUsers"></span>
+                All Users
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="washers"></span>
-                Washers
+              <a class="nav-link" href="#" routerLink="cars">
+                <span data-feather="cars"></span>
+                Cars
               </a>
             </li>
           </ul>
@@ -47,36 +47,7 @@
 
           <h1>Welcome, {{fullNames}}</h1>
            </div>
-          <div>
-          <table class="table">
-            <thead class="thead">
-              <tr>
-                <th scope="col">UserId</th>
-                <th scope="col">User Name</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Role</th>
-                <th scope="col">Status</th>
-                <th scope="col">Button</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let item of users">
-                <th scope="row">{{item.userId}}</th>
-                <th scope="row">{{item.email}}</th>
-                <td>{{item.firstName}}</td>
-                <td>{{item.lastName}}</td>
-                <td>{{item.role}}</td>
-                <td>{{item.status}}</td>
 
-               <td>
-                <button type="button" class="btn btn-outline-secondary"  (click)="deletingUser(item.userId)">Delete</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-         </div>
 
 
       </main>

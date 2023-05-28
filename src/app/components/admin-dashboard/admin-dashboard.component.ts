@@ -10,7 +10,7 @@ import { UserStoreService } from 'src/app/services/user-store.service';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-public users:any=[];
+
 public fullNames!:string;
 public roles!:string; //! for not defining any value
 constructor(private api:ApiService,
@@ -20,10 +20,6 @@ constructor(private api:ApiService,
   ){}
 
 ngOnInit() {
-this.api.getUser()
-.subscribe(res=>{
-this.users=res;
-});
 
 this.userStore.getFullNameFromStore()
 .subscribe(val=>{
@@ -46,14 +42,4 @@ return true;
 return false;
 }
 
-deletingUser(id:number){
- this.api.deleteUser(id).subscribe({
-  next:(res=>{
-    
-   window.location.reload();
-  }),error:(err=>{
-    //console.log("Error occured");
-  })
- })
-}
 }

@@ -45,13 +45,23 @@
 
 .box{
   margin-top: 30px;
-  margin-left: 170px;
+  margin-left: 190px;
+  height: 40px;
+
 }
 #contactusbutton{
   margin-top: 50px;
+  height: 40px;
 }
+
+#submitButton{
+  height: 40px;
+  width: 150px;
+}
+
 .box1{
   margin-left: 50px;
+
 }
 
 #service h1{

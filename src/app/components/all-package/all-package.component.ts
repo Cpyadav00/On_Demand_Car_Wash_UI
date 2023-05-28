@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgToastService } from 'ng-angular-popup';
+import { Package } from 'src/app/models/package.model';
 import { ApiService } from 'src/app/services/api.service';
+import { ProductServiceService } from 'src/app/services/product-service.service';
 
 @Component({
   selector: 'app-all-package',
@@ -9,13 +11,15 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class AllPackageComponent implements OnInit {
 
-  constructor(private api:ApiService,
-    private toast:NgToastService){}
+  constructor(
+    private toast:NgToastService,
+    private productserv:ProductServiceService){}
 
   public packages:any=[];
+  //public selectedPackage:any;
 
 ngOnInit(){
-this.api.getPackage()
+this.productserv.getPackage()
 .subscribe(res=>{
   this.packages=res;
 });
@@ -23,11 +27,15 @@ this.api.getPackage()
 }
 
 
+
 deletePackage(id:number){
-  this.api.deletePackage(id)
+if(confirm("Are you really want to delete this record ?"))
+{
+  this.productserv.deletePackage(id)
   .subscribe({
     next:(res=>{
       this.toast.success({detail:"SUCCESS",summary:res.message,duration:5000});
+
       window.location.reload();
     }),
     error:(err=>{
@@ -35,8 +43,12 @@ deletePackage(id:number){
     })
   })
 
-
-
 }
+}
+
+populatePackage(selectedPackage:Package){
+this.productserv.product=selectedPackage;
+}
+
 
 }

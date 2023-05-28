@@ -1,5 +1,5 @@
 <div>
-  <button type="button" class="btn btn-outline-secondary mt-2 mb-3" routerLink="form">Add New</button>
+  <button type="button" class="btn btn-secondary mt-2 mb-3" routerLink="form">Add New</button>
   <table class="table">
     <thead class="thead">
       <tr>
@@ -8,7 +8,7 @@
         <th scope="col">Discription</th>
         <th scope="col">Price</th>
         <th scope="col">Status</th>
-        <th scope="col">Buttons</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -20,8 +20,8 @@
         <td>{{item.status}}</td>
 
        <td>
-        <button type="button" class="btn btn-outline-secondary" routerLink="form">Update</button>
-        <button type="button" class="btn btn-outline-secondary" (click)="deletePackage(item.id)">Delete</button>
+        <button type="button" class="btn btn-secondary mb-2" (click)="populatePackage(item)" routerLink="update">Update</button>
+        <button type="button" class="btn btn-secondary" (click)="deletePackage(item.id)">Delete</button>
         </td>
       </tr>
     </tbody>

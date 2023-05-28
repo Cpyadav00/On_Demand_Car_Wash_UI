@@ -23,15 +23,7 @@ export class ApiService {
 
   //User Services Ended
 
-//Package service started
 
-  getPackage(){
-    return this.http.get<any>(this.baseUrl+'Package/GetAllPackage');
-  }
-
-  deletePackage(id:number){
-   return this.http.delete<any>(this.baseUrl+'Package/DeletePackage/'+id);
-  }
 
 
 

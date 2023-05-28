@@ -7,7 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AllPackageComponent } from './components/all-package/all-package.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgToastModule } from 'ng-angular-popup';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
@@ -18,6 +18,13 @@ import { WasherDashboardComponent } from './components/washer-dashboard/washer-d
 import { CustomerFormComponent } from './components/admin-dashboard/customer-form/customer-form.component';
 import { FormForPackageComponent } from './components/all-package/form-for-package/form-for-package.component';
 import { OrderFormComponent } from './components/order-form/order-form.component';
+import { UpdatePackageComponent } from './components/all-package/update-package/update-package.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { AllUsersComponent } from './components/all-users/all-users.component';
+import { TotalOrdersComponent } from './components/total-orders/total-orders.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { CarsComponent } from './components/cars/cars.component';
+
 
 
 @NgModule({
@@ -34,6 +41,12 @@ import { OrderFormComponent } from './components/order-form/order-form.component
     CustomerFormComponent,
     FormForPackageComponent,
     OrderFormComponent,
+    UpdatePackageComponent,
+    ContactUsComponent,
+    AllUsersComponent,
+    TotalOrdersComponent,
+    NotFoundComponent,
+    CarsComponent,
 
   ],
   imports: [
@@ -41,7 +54,8 @@ import { OrderFormComponent } from './components/order-form/order-form.component
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgToastModule
+    NgToastModule,
+    FormsModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,
