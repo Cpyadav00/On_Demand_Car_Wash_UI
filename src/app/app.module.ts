@@ -24,6 +24,7 @@ import { AllUsersComponent } from './components/all-users/all-users.component';
 import { TotalOrdersComponent } from './components/total-orders/total-orders.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CarsComponent } from './components/cars/cars.component';
+import { InvoiceComponent } from './components/invoice/invoice.component';
 
 
 
@@ -47,6 +48,7 @@ import { CarsComponent } from './components/cars/cars.component';
     TotalOrdersComponent,
     NotFoundComponent,
     CarsComponent,
+    InvoiceComponent,
 
   ],
   imports: [

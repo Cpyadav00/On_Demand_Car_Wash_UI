@@ -17,6 +17,7 @@ import { AllUsersComponent } from './components/all-users/all-users.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { TotalOrdersComponent } from './components/total-orders/total-orders.component';
 import { CarsComponent } from './components/cars/cars.component';
+import { InvoiceComponent } from './components/invoice/invoice.component';
 
 
 const routes: Routes = [
@@ -36,9 +37,9 @@ const routes: Routes = [
   {path:'home/contact', component:ContactUsComponent},
   {path:'admin/orders', component:TotalOrdersComponent,canActivate:[AuthGuard]},
   {path:'admin/cars', component:CarsComponent,canActivate:[AuthGuard]},
+  {path:'admin/invoice', component:InvoiceComponent,canActivate:[AuthGuard]},
 
 
-  
   {path:'**', component:NotFoundComponent},
 
 ];

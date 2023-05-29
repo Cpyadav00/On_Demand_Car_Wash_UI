@@ -1,0 +1,29 @@
+<div>
+  <table class="table">
+    <thead class="thead">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Car Name</th>
+        <th scope="col">Washer Name</th>
+        <th scope="col">Booking Date</th>
+        <th scope="col">Payment Status</th>
+        <th scope="col">Package Name</th>
+        <th scope="col">Total Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of invoices">
+        <td>{{item.invoiceId}}</td>
+        <td>{{item.customerName}}</td>
+      <td>{{item.carName}}</td>
+      <td>{{item.washerName}}</td>
+      <td>{{item.dateTime}}</td>
+      <td>{{item.paymentStatus}}</td>
+      <td>{{item.packageName}}</td>
+      <td>{{item.orderTotal}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+ </div>
