@@ -86,15 +86,16 @@
 
       <div class="col-md-6 box">
         <div class="col-md-12">
-        <!-- <select class="btn btn-secondary btn-lg dropdown-toggle mt-4  " name="roleDropDown" id="roleDropDown">
-          <option value="">Select Role</option>
-          <option value="Washer">Washer</option>
-          <option value="Customer">Customer</option>
-        </select> -->
 
-       
-
-         <small *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required','password')"
+          <label for="role">Role </label>
+          <input formControlName="role"
+          id="role"
+          type="role"
+          placeholder="Customer/Washer"
+          name="role"
+          required
+          />
+         <small *ngIf="signupForm.controls['role'].dirty && signupForm.hasError('required','role')"
          class="text-danger">*Password is Required</small>
         </div>
      </div>

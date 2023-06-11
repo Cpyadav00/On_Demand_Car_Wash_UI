@@ -12,6 +12,7 @@ export class ApiService {
   ){}
 
   //User Services Started
+  
 
   getUser(){
     return this.http.get<any>(this.baseUrl+'UserDetail/GetUserDetails');

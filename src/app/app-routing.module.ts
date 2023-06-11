@@ -34,13 +34,13 @@ const routes: Routes = [
   {path:'home/form', component:OrderFormComponent,canActivate:[AuthGuard]},
   {path:'admin/services/update', component:UpdatePackageComponent,canActivate:[AuthGuard]},
   {path:'admin/allUsers', component:AllUsersComponent,canActivate:[AuthGuard]},
-  {path:'home/contact', component:ContactUsComponent},
+  {path:'contact', component:ContactUsComponent},
   {path:'admin/orders', component:TotalOrdersComponent,canActivate:[AuthGuard]},
   {path:'admin/cars', component:CarsComponent,canActivate:[AuthGuard]},
   {path:'admin/invoice', component:InvoiceComponent,canActivate:[AuthGuard]},
 
 
-  {path:'**', component:NotFoundComponent},
+  // {path:'**', component:NotFoundComponent},
 
 ];
 

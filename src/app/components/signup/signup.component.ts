@@ -21,13 +21,16 @@ export class SignupComponent implements OnInit{
       password:['',Validators.required],
       firstName:['',Validators.required],
       lastName:['',Validators.required],
-      phoneNumber:['',Validators.required]
+      phoneNumber:['',Validators.required],
+      role:['',Validators.required]
     })
   }
 
   onSignUp(){
-    if(this.signupForm.valid){
-     this.auth.signUp(this.signupForm.value)
+    if(this.signupForm.valid)
+    {
+    if(this.signupForm.value.role=='Washer' || this.signupForm.value.role=='Customer')
+    { this.auth.signUp(this.signupForm.value)
      .subscribe({
       next:(res)=>{
        // alert(res.message);
@@ -42,9 +45,13 @@ export class SignupComponent implements OnInit{
      })
     }
     else{
+      this.toast.error({detail:"ERROR",summary:"Role should be Customer or Washer",duration:5000});
+    }
+    }
+    else{
 
       this.vaildateAllFormFields(this.signupForm);
-      alert("Your form is invalid");
+      this.toast.error({detail:"ERROR",summary:"Form is not valid",duration:5000});
     }
   }
 

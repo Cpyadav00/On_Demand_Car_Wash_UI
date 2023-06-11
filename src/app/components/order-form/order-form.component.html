@@ -1,20 +1,27 @@
 <body class="container-fluid">
   <div class="container" id="loginform">
-    <h2 class="login-title">Book Appointment</h2>
+    <h2 class="login-title">Book Car Wash</h2>
 
-    <form class="login-form" [formGroup]="orderFormData">
-
+    <form class="login-form" #myForm="ngForm">
+      <div>
+        <input hidden="true"
+               name="id"
+               [value]="orderform.id"
+               />
+      </div>
 
       <div class="row">
         <div class="col-md-6 box ">
            <div class="col-md-12">
             <label for="carName">Car Name</label>
-            <input formControlName="carName"
+            <input
                    id="carName"
                    type="text"
                    placeholder="Car Name"
                    name="carName"
                    required
+                   #carName="ngModel"
+               [(ngModel)]="orderform.carName"
                    />
                    <!-- <small *ngIf="orderFormData.controls['carName'].dirty && orderFormData.hasError('required','carName')"
                    class="text-danger">*First Name is Required</small> -->
@@ -23,12 +30,14 @@
         <div class="col-md-6 box">
            <div class="col-md-12">
             <label for="carModel">Car Model </label>
-            <input formControlName="carModel"
+            <input
                    id="carModel"
                    type="text"
                    placeholder="Car Model"
                    name="carModel"
                    required
+                   #carModel="ngModel"
+               [(ngModel)]="orderform.carModel"
                    />
                    <!-- <small *ngIf="orderFormData.controls['carModel'].dirty && orderFormData.hasError('required','carModel')"
                    class="text-danger">*Last Name is Required</small> -->
@@ -40,12 +49,14 @@
         <div class="col-md-6 box ">
            <div class="col-md-12">
             <label for="address">Address </label>
-            <input formControlName="address"
+            <input
                    id="address"
                    type="text"
                    placeholder="Address"
                    name="address"
                    required
+                   #address="ngModel"
+               [(ngModel)]="orderform.address"
                    />
                    <!-- <small *ngIf="orderFormData.controls['address'].dirty && orderFormData.hasError('required','address')"
                    class="text-danger">*Email is Required</small> -->
@@ -54,12 +65,14 @@
         <div class="col-md-6 box ">
           <div class="col-md-12">
             <label for="city">City</label>
-           <input formControlName="city"
+           <input
                   id="city"
                   type="city"
                   placeholder="City"
                   name="city"
                   required
+                  #city="ngModel"
+               [(ngModel)]="orderform.city"
                   />
                   <!-- <small *ngIf="orderFormData.controls['city'].dirty && orderFormData.hasError('required','city')"
                   class="text-danger">*Phone Number is Required</small> -->
@@ -70,12 +83,14 @@
         <div class="col-md-6 box">
            <div class="col-md-12">
             <label for="state">State</label>
-            <input formControlName="password"
+            <input
             id="state"
             type="state"
             placeholder="State"
             name="state"
             required
+            #state="ngModel"
+               [(ngModel)]="orderform.state"
             />
             <!-- <small *ngIf="orderFormData.controls['state'].dirty && orderFormData.hasError('required','state')"
             class="text-danger">*Password is Required</small> -->
@@ -87,25 +102,22 @@
       <div class="col-md-6 box">
         <div class="col-md-12">
           <label for="pincode">Pincode</label>
-          <input formControlName="pincode"
+          <input
           id="pincode"
           type="number"
           placeholder="Pincode"
           name="pincode"
           required
+          #pincode="ngModel"
+            [(ngModel)]="orderform.pincode"
           />
-
-
-
-
          <!-- <small *ngIf="orderFormData.controls['pincode'].dirty && orderFormData.hasError('required','pincode')"
          class="text-danger">*Password is Required</small> -->
         </div>
      </div>
-
-
-
       </div>
+
+      
 
 
       <button

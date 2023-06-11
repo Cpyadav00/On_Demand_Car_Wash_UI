@@ -5,7 +5,7 @@ export class Orders{
   deliveryStatus:string="";
   paymentStatus:string="";
   customerName:string="";
-  address:string="";
+  adress:string="";
   carName:string="";
   carModel:string="";
 }
