@@ -25,7 +25,8 @@ export class UpdatePackageComponent implements OnInit {
 
   updateProduct(myForm:NgForm){
     this.packserv.updatePackage().subscribe(data=>{
-      console.log("Update Success");
+     // console.log("Update Success");
+      this.toast.success({detail:"SUCCESS",summary:data.message,duration:5000});
       window.location.reload();
     })
 

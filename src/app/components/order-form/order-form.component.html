@@ -3,12 +3,6 @@
     <h2 class="login-title">Book Car Wash</h2>
 
     <form class="login-form" #myForm="ngForm">
-      <div>
-        <input hidden="true"
-               name="id"
-               [value]="orderform.id"
-               />
-      </div>
 
       <div class="row">
         <div class="col-md-6 box ">
@@ -21,10 +15,9 @@
                    name="carName"
                    required
                    #carName="ngModel"
-               [(ngModel)]="orderform.carName"
+               [(ngModel)]="orderser.orderformobj.car.name"
                    />
-                   <!-- <small *ngIf="orderFormData.controls['carName'].dirty && orderFormData.hasError('required','carName')"
-                   class="text-danger">*First Name is Required</small> -->
+
            </div>
         </div>
         <div class="col-md-6 box">
@@ -37,10 +30,9 @@
                    name="carModel"
                    required
                    #carModel="ngModel"
-               [(ngModel)]="orderform.carModel"
+               [(ngModel)]="orderser.orderformobj.car.model"
                    />
-                   <!-- <small *ngIf="orderFormData.controls['carModel'].dirty && orderFormData.hasError('required','carModel')"
-                   class="text-danger">*Last Name is Required</small> -->
+
            </div>
         </div>
       </div>
@@ -56,10 +48,9 @@
                    name="address"
                    required
                    #address="ngModel"
-               [(ngModel)]="orderform.address"
+               [(ngModel)]="orderser.orderformobj.address.custAddress"
                    />
-                   <!-- <small *ngIf="orderFormData.controls['address'].dirty && orderFormData.hasError('required','address')"
-                   class="text-danger">*Email is Required</small> -->
+
            </div>
         </div>
         <div class="col-md-6 box ">
@@ -72,10 +63,9 @@
                   name="city"
                   required
                   #city="ngModel"
-               [(ngModel)]="orderform.city"
+               [(ngModel)]="orderser.orderformobj.address.city"
                   />
-                  <!-- <small *ngIf="orderFormData.controls['city'].dirty && orderFormData.hasError('required','city')"
-                  class="text-danger">*Phone Number is Required</small> -->
+
           </div>
        </div>
       </div>
@@ -90,38 +80,43 @@
             name="state"
             required
             #state="ngModel"
-               [(ngModel)]="orderform.state"
+               [(ngModel)]="orderser.orderformobj.address.state"
             />
-            <!-- <small *ngIf="orderFormData.controls['state'].dirty && orderFormData.hasError('required','state')"
-            class="text-danger">*Password is Required</small> -->
+
            </div>
         </div>
-      <!-- role div -->
-
-
-      <div class="col-md-6 box">
+    <div class="col-md-6 box">
         <div class="col-md-12">
           <label for="pincode">Pincode</label>
           <input
           id="pincode"
-          type="number"
+          type="text"
           placeholder="Pincode"
           name="pincode"
           required
           #pincode="ngModel"
-            [(ngModel)]="orderform.pincode"
+            [(ngModel)]="orderser.orderformobj.address.pincode"
           />
-         <!-- <small *ngIf="orderFormData.controls['pincode'].dirty && orderFormData.hasError('required','pincode')"
-         class="text-danger">*Password is Required</small> -->
         </div>
      </div>
       </div>
 
-      
 
+        <div class="col-md-12">
+          <label for="instructions">Instructions</label>
+          <input
+          id="instructions"
+          type="text"
+          placeholder="Instructions"
+          name="instructions"
+          required
+          #pincode="ngModel"
+            [(ngModel)]="orderser.orderformobj.instructions"
+          />
+        </div>
 
       <button
-       class="btn btn--form" type="submit" value="Log in">
+       class="btn btn--form" type="submit" value="Save" (click)="onSave(myForm)">
         Save Details
       </button>
 

@@ -18,6 +18,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { TotalOrdersComponent } from './components/total-orders/total-orders.component';
 import { CarsComponent } from './components/cars/cars.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
+import { OrderViewTableComponent } from './components/order-form/order-view-table/order-view-table.component';
+import { SelectPackageComponent } from './components/select-package/select-package.component';
 
 
 const routes: Routes = [
@@ -32,13 +34,15 @@ const routes: Routes = [
   {path:'admin/form', component:CustomerFormComponent,canActivate:[AuthGuard]},
   {path:'admin/services/form', component:FormForPackageComponent,canActivate:[AuthGuard]},
   {path:'home/form', component:OrderFormComponent,canActivate:[AuthGuard]},
+  {path:'form', component:OrderFormComponent,canActivate:[AuthGuard]},
   {path:'admin/services/update', component:UpdatePackageComponent,canActivate:[AuthGuard]},
   {path:'admin/allUsers', component:AllUsersComponent,canActivate:[AuthGuard]},
   {path:'contact', component:ContactUsComponent},
   {path:'admin/orders', component:TotalOrdersComponent,canActivate:[AuthGuard]},
   {path:'admin/cars', component:CarsComponent,canActivate:[AuthGuard]},
   {path:'admin/invoice', component:InvoiceComponent,canActivate:[AuthGuard]},
-
+  {path:'home/form/orderview', component:OrderViewTableComponent,canActivate:[AuthGuard]},
+  {path:'home/form/selectpackage', component:SelectPackageComponent,canActivate:[AuthGuard]},
 
   // {path:'**', component:NotFoundComponent},
 

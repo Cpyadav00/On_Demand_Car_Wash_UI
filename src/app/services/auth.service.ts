@@ -69,4 +69,11 @@ getRoleFromToken(){
 
 }
 
+getId(){
+  if(this.userPayload){
+  return this.userPayload.primarysid;
+  }
+
+}
+
 }

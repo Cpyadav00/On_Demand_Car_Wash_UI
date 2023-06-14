@@ -8,6 +8,12 @@
   Car Wash & Detail Center/ Auto Repair Shop / Gas Station
   Open until 6:00 PM
     </h2>
+    <ng-container>
+      <button type="submit" *ngIf="isLoggedIn" routerLink="form" id="bookbutton"
+class="btn btn-success btn-lg col-md-4 box " >
+Book Your Car Wash Now
+</button>
+</ng-container>
     </section>
   </header>
 </section>
@@ -37,10 +43,10 @@
         <li>Interior Vacuuming ( Carpet and Seats)</li>
         </p>
   <ng-container>
-               <button type="submit" *ngIf="isLoggedIn" routerLink="form"
-    class="btn btn-dark btn-lg col-md-4 box ">
+               <!-- <button type="submit" *ngIf="isLoggedIn" routerLink="form"
+    class="btn btn-dark btn-lg col-md-4 box " value="Basic Service">
     Book
-  </button>
+  </button> -->
   </ng-container>
       </div>
       <div class="col-md-4" id="service-col2">
@@ -60,10 +66,10 @@
           <li>Interior Vacuuming ( Carpet and Seats)</li>
           </p>
           <ng-container>
-             <button type="submit" *ngIf="isLoggedIn" routerLink="form"
-            class="btn btn-dark btn-lg col-md-4 box  " >
+             <!-- <button type="submit" *ngIf="isLoggedIn" routerLink="form"
+            class="btn btn-dark btn-lg col-md-4 box  " value="Standard Service">
             Book
-          </button>
+          </button> -->
           </ng-container>
       </div>
       <div class="col-md-4" id="service-col3">
@@ -83,15 +89,33 @@
           <li>Interior Vacuuming ( Carpet and Seats)</li>
           </p>
           <ng-container>
-                     <button type="submit" *ngIf="isLoggedIn" routerLink="form"
-            class="btn btn-dark btn-lg col-md-4 box ">
+                     <!-- <button type="submit" *ngIf="isLoggedIn" routerLink="form"
+            class="btn btn-dark btn-lg col-md-4 box " value="Premium Service">
             Book
-          </button>
+          </button> -->
           </ng-container>
       </div>
       </div>
     </div>
     </section>
+
+    <!-- Book Your Car Wash -->
+<!-- <div>
+<div class="p-5 text-center bg-image rounded-3" style="
+    background-image: url('https://media.istockphoto.com/id/1148160621/photo/man-washing-a-soapy-blue-car-with-a-green-sponge.jpg?s=1024x1024&w=is&k=20&c=ATy91eF_Eh3uvEWTsGuMJVg3LAjv2jVzf7jqXmGp1as=');
+    height: 400px;
+  ">
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="text-white">
+        <h1 class="mb-3">Heading</h1>
+        <h4 class="mb-3">Subheading</h4>
+        <a class="btn btn-outline-light btn-lg" href="#!" role="button"></a>
+      </div>
+    </div>
+  </div>
+</div>
+</div> -->
 
     <!-- about Us -->
     <section id="about">
@@ -120,7 +144,24 @@
       </div>
     </div>
     </section>
+</div>
 
+    <!-- Book Your Car Wash -->
+<div>
+  <section id="heroid">
+    <header id="header">
+    </header>
+    <header class="hero-header">
+      <section id="titlesection">
+      <ng-container>
+        <button type="submit" *ngIf="isLoggedIn" routerLink="form" id="bookbutton"
+  class="btn btn-danger btn-lg col-md-4 box " >
+  Book Your Car Wash Now
+  </button>
+  </ng-container>
+      </section>
+    </header>
+  </section>
 </div>
 
 	<!-- footer -->

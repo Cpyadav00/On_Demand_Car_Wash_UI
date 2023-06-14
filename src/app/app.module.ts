@@ -25,6 +25,8 @@ import { TotalOrdersComponent } from './components/total-orders/total-orders.com
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CarsComponent } from './components/cars/cars.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
+import { OrderViewTableComponent } from './components/order-form/order-view-table/order-view-table.component';
+import { SelectPackageComponent } from './components/select-package/select-package.component';
 
 
 
@@ -49,6 +51,8 @@ import { InvoiceComponent } from './components/invoice/invoice.component';
     NotFoundComponent,
     CarsComponent,
     InvoiceComponent,
+    OrderViewTableComponent,
+    SelectPackageComponent,
 
   ],
   imports: [

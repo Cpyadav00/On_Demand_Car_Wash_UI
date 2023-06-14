@@ -1,0 +1,50 @@
+
+  <div class="container">
+    <h1>Order Preview</h1>
+
+    <div class="order-card">
+      <h3>Order Details</h3>
+      <p><strong>Order ID:</strong> #{{orderobj.id}}</p>
+      <p><strong>Date:</strong> {{orderobj.date_time}}</p>
+      <p><strong>Status:</strong>{{orderobj.status}}</p>
+    </div>
+
+    <div class="order-card">
+      <h3>Washing Address</h3>
+      <p><strong>Name:</strong>{{orderobj.customerName}}</p>
+      <p><strong>Address:</strong>{{orderobj.address.custAddress}}</p>
+      <p><strong>City:</strong>{{orderobj.address.city}}</p>
+      <p><strong>Zip:</strong>{{orderobj.address.pincode}}</p>
+    </div>
+
+    <div class="order-card">
+      <h3>Package Details</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Product 1</td>
+            <td>2</td>
+            <td>$20.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="order-card">
+      <h3>Total</h3>
+      <p><strong>Subtotal:</strong> ${{orderobj.totalCost}}</p>
+      <p><strong>Tax:</strong> ${{orderobj.totalCost*0.10}}</p>
+      <p><strong>Total:</strong> ${{orderobj.totalCost+orderobj.totalCost*0.10}}</p>
+    </div>
+  </div>
+  <div class="order-buttons">
+    <button id="editbutton" type="button"  routerLink="update">Edit</button>
+    <button id="updatebutton" type="button"  >Proceed</button>
+  </div>

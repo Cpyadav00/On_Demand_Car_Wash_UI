@@ -1,6 +1,6 @@
 export class Car{
   id:number=0;
   name:string="";
-  model:number=0;
+  model:string="";
   status:string="";
 }

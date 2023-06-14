@@ -194,6 +194,17 @@ padding-top: 10px;
 	background: url(https://images.unsplash.com/photo-1607860108855-64acf2078ed9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80) center center no-repeat;
 	background-size: cover;
 }
+#heroid{
+  display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 90vh;
+	padding: 1em;
+	box-sizing: border-box;
+	color: white;
+	background: url(https://images.unsplash.com/photo-1632685062337-095b722134ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80) center center no-repeat;
+	background-size: cover;
+}
 
 #titlesection{
   margin-bottom: 350px;
@@ -220,4 +231,18 @@ padding-top: 10px;
 
   #middlecontent{
     /* background-color: rgb(239, 208, 172); */
+  }
+
+  #bookbutton{
+    margin-left: 400px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  #bookbutton1{
+    margin-left: 100px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 400px;
+    padding-right: 400px;
   }
