@@ -20,6 +20,10 @@ export class CarService {
      return this.http.get<Car>(this.baseUrl+'GetAllCar');
     }
 
+    getCarById(id:number){
+      return this.http.get<Car>(this.baseUrl+'GetCar/'+id);
+     }
+
     deleteCar(id:number){
     return this.http.delete<Car>(this.baseUrl+'DeleteCar/'+id);
     }

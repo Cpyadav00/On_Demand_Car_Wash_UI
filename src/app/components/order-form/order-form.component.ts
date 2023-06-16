@@ -33,28 +33,40 @@ private orderview:OrderViewTableService
 ngOnInit():void{
   this.userStore.getId()
   .subscribe(val=>{
-    let fullNameFromToken=this.auth.getId();
-    this.id=val || fullNameFromToken
+    let idFromToken=this.auth.getId();
+    this.id=val || idFromToken
   });
-
-this.userStore.getFullNameFromStore()
-.subscribe(val=>{
-  let fullNameFromToken=this.auth.getFullNameFromToken();
-  this.fullNames=val || fullNameFromToken
-});
 }
 
 
  onSave(myformdata:NgForm){
  this.orderser.orderformobj.custId=this.id
- this.orderser.orderformobj.customerName=this.fullNames
- this.orderser.addData()
- .subscribe(data=>{
-  this.toast.success({detail:"SUCCESS",duration:5000});
- this.orderview.setDataForPreview(data)
- this.router.navigate(['/home','form','selectpackage'])
+let givendate=new Date(this.orderser.orderformobj.isScheduledLater)
+let todayDate=new Date()
+let giventime=givendate.getHours()
+console.log(giventime-2)
 
-})
+let time1=new Date('2018-04-07 09:00:00')
+let time2=new Date('2018-04-07 22:00:00')
+
+if(givendate.getDate()>=todayDate.getDate()){
+  if(giventime>=time1.getHours() && giventime<=time2.getHours() && giventime>todayDate.getHours()+1){
+    this.orderview.setDataForPreview(this.orderser.orderformobj)
+    this.router.navigate(['/home','selectpackage','form','orderview'])
+  }
+  else
+  {
+    this.toast.error({detail:"ERROR",summary:"Time Should be greater than 2hr",duration:5000});
+  }
+}
+else{
+ this.toast.error({detail:"ERROR",summary:"Date is not valid",duration:5000});
+}
+
+
+
+
+
   }
 
 

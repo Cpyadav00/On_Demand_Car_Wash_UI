@@ -27,6 +27,8 @@ import { CarsComponent } from './components/cars/cars.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
 import { OrderViewTableComponent } from './components/order-form/order-view-table/order-view-table.component';
 import { SelectPackageComponent } from './components/select-package/select-package.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { OrderInvoiceComponent } from './components/order-invoice/order-invoice.component';
 
 
 
@@ -53,6 +55,8 @@ import { SelectPackageComponent } from './components/select-package/select-packa
     InvoiceComponent,
     OrderViewTableComponent,
     SelectPackageComponent,
+    PaymentComponent,
+    OrderInvoiceComponent,
 
   ],
   imports: [

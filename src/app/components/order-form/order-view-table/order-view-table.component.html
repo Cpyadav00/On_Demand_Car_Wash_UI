@@ -3,10 +3,11 @@
     <h1>Order Preview</h1>
 
     <div class="order-card">
-      <h3>Order Details</h3>
-      <p><strong>Order ID:</strong> #{{orderobj.id}}</p>
-      <p><strong>Date:</strong> {{orderobj.date_time}}</p>
-      <p><strong>Status:</strong>{{orderobj.status}}</p>
+      <h3>Car Details</h3>
+      <p><strong>Car Name:</strong> {{orderobj.car.name}}</p>
+      <p><strong>Car Model:</strong> {{orderobj.car.model}}</p>
+      <p><strong>Car Number:</strong>{{orderobj.car.carNumber}}</p>
+      <p><strong>Car Number:</strong>{{convertdate()}}</p>
     </div>
 
     <div class="order-card">
@@ -29,9 +30,9 @@
         </thead>
         <tbody>
           <tr>
-            <td>Product 1</td>
-            <td>2</td>
-            <td>$20.00</td>
+            <td>{{package.name}}</td>
+            <td>{{package.description}}</td>
+            <td>${{package.price}}</td>
           </tr>
         </tbody>
       </table>
@@ -39,12 +40,19 @@
 
     <div class="order-card">
       <h3>Total</h3>
-      <p><strong>Subtotal:</strong> ${{orderobj.totalCost}}</p>
-      <p><strong>Tax:</strong> ${{orderobj.totalCost*0.10}}</p>
-      <p><strong>Total:</strong> ${{orderobj.totalCost+orderobj.totalCost*0.10}}</p>
+      <p><strong>Subtotal:</strong> ${{package.price}}</p>
+      <p><strong>Tax:</strong> ${{package.price*0.10}}</p>
+      <p><strong>Total:</strong> ${{orderobj.totalCost+package.price*0.10}}</p>
     </div>
   </div>
   <div class="order-buttons">
-    <button id="editbutton" type="button"  routerLink="update">Edit</button>
-    <button id="updatebutton" type="button"  >Proceed</button>
+
+    <button type="submit"  (click)="populateform(orderobj)" routerLink=".." id="bookbutton1"
+    class="btn btn-success btn-lg  box " >
+    Edit
+    </button>
+    <button type="submit"  routerLink="payment" (click)="addData(orderobj)" id="bookbutton2"
+    class="btn btn-success btn-lg  box " >
+    Procced
+    </button>
   </div>

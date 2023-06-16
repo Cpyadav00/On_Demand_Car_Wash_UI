@@ -1,0 +1,58 @@
+
+<div class="container">
+  <h1>Invoice</h1>
+
+  <div class="order-card">
+    <h3>Order Details</h3>
+    <p><strong>Order ID:</strong> #{{this.orderser.orderformobj.customerName}}</p>
+    <p><strong>Date:</strong> {{this.orderser.orderformobj.isScheduledLater | date :'yyyy-MM-dd'}}</p>
+    <p><strong>Status:</strong>{{this.orderser.orderformobj.customerName}}</p>
+  </div>
+  <div class="order-card">
+    <h3>Car Details</h3>
+    <p><strong>Car Name:</strong> {{this.orderser.orderformobj.customerName}}</p>
+    <p><strong>Car Model:</strong> {{this.orderser.orderformobj.customerName}}</p>
+    <p><strong>Car Number:</strong>{{this.orderser.orderformobj.customerName}}</p>
+  </div>
+
+  <div class="order-card">
+    <h3>Washing Address</h3>
+    <p><strong>Name:</strong>{{this.orderser.orderformobj.customerName}}</p>
+    <p><strong>Address:</strong>{{this.orderser.orderformobj.customerName}}</p>
+    <p><strong>City:</strong>{{this.orderser.orderformobj.customerName}}</p>
+    <p><strong>Zip:</strong>{{this.orderser.orderformobj.customerName}}</p>
+  </div>
+
+  <div class="order-card">
+    <h3>Package Details</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{this.orderser.orderformobj.customerName}}</td>
+          <td>{{this.orderser.orderformobj.customerName}}</td>
+          <td>${{this.orderser.orderformobj.customerName}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="order-card">
+    <h3>Total</h3>
+    <p><strong>Subtotal:</strong> ${{this.orderser.orderformobj.customerName}}</p>
+    <p><strong>Tax:</strong> ${{this.orderser.orderformobj.customerName}}</p>
+    <p><strong>Total:</strong> ${{this.orderser.orderformobj.customerName}}</p>
+  </div>
+</div>
+<div class="order-buttons">
+  <button type="submit"  routerLink=""  id="bookbutton2"
+  class="btn btn-success btn-lg  box " >
+  Back to home
+  </button>
+</div>

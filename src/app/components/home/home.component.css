@@ -228,11 +228,6 @@ padding-top: 10px;
 
 	@media only screen and (min-width: 32em) { .hero-title { font-size: 16vh; } }
 
-
-  #middlecontent{
-    /* background-color: rgb(239, 208, 172); */
-  }
-
   #bookbutton{
     margin-left: 400px;
     padding-top: 20px;

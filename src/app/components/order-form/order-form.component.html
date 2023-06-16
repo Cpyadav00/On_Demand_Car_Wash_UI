@@ -7,19 +7,39 @@
       <div class="row">
         <div class="col-md-6 box ">
            <div class="col-md-12">
-            <label for="carName">Car Name</label>
+            <label for="customerName">Customer Name</label>
             <input
-                   id="carName"
+                   id="customerName"
                    type="text"
-                   placeholder="Car Name"
-                   name="carName"
+                   placeholder="Customer Name"
+                   name="customerName"
                    required
-                   #carName="ngModel"
-               [(ngModel)]="orderser.orderformobj.car.name"
+                   #customerName="ngModel"
+               [(ngModel)]="orderser.orderformobj.customerName"
                    />
 
            </div>
         </div>
+        <div class="col-md-6 box ">
+          <div class="col-md-12">
+           <label for="carName">Car Name</label>
+           <input
+                  id="carName"
+                  type="text"
+                  placeholder="Car Name"
+                  name="carName"
+                  required
+                  #carName="ngModel"
+              [(ngModel)]="orderser.orderformobj.car.name"
+                  />
+
+          </div>
+       </div>
+
+      </div>
+
+      <div class="row">
+
         <div class="col-md-6 box">
            <div class="col-md-12">
             <label for="carModel">Car Model </label>
@@ -35,6 +55,21 @@
 
            </div>
         </div>
+        <div class="col-md-6 box">
+          <div class="col-md-12">
+           <label for="carNumber">Car Number </label>
+           <input
+                  id="carNumber"
+                  type="text"
+                  placeholder="Car Number"
+                  name="carNumber"
+                  required
+                  #carNumber="ngModel"
+              [(ngModel)]="orderser.orderformobj.car.carNumber"
+                  />
+
+          </div>
+       </div>
       </div>
 
       <div class="row">
@@ -100,6 +135,41 @@
         </div>
      </div>
       </div>
+
+
+      <div class="row">
+        <div class="col-md-6 box">
+           <div class="col-md-12">
+            <label for="phoneNumber">Phone Number</label>
+            <input
+            id="phoneNumber"
+            type="number"
+            placeholder="Phone Number"
+            name="phoneNumber"
+            required
+            #phoneNumber="ngModel"
+               [(ngModel)]="orderser.orderformobj.phoneNumber"
+            />
+
+           </div>
+        </div>
+    <div class="col-md-6 box">
+        <div class="col-md-12">
+          <label for="date_time">Date</label>
+          <input
+          id="date_time"
+          type="datetime-local"
+          placeholder="date_time"
+          name="date_time"
+          required
+          #date_time="ngModel"
+            [(ngModel)]="orderser.orderformobj.isScheduledLater"
+          />
+        </div>
+     </div>
+      </div>
+
+
 
 
         <div class="col-md-12">

@@ -19,7 +19,7 @@
         <td>{{item.status}}</td>
 
        <td>
-        <button type="button" class="btn btn-secondary mb-2"  routerLink="paymentpage">Select</button>
+        <button type="button" class="btn btn-secondary mb-2" (click)="populatePackage(item)" routerLink="form">Select</button>
         </td>
       </tr>
     </tbody>

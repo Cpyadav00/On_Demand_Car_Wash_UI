@@ -28,6 +28,10 @@ updatePackage(){
     return this.http.get<any>(this.baseUrl+'GetAllPackage');
   }
 
+  getPackageById(id:number){
+    return this.http.get<any>(this.baseUrl+'GetPackage/'+id);
+  }
+
   deletePackage(id:number){
    return this.http.delete<any>(this.baseUrl+'DeletePackage/'+id);
   }

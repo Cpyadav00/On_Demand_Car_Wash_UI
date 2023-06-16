@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgToastService } from 'ng-angular-popup';
 import { Package } from 'src/app/models/package.model';
+import { OrderformService } from 'src/app/services/orderform.service';
 import { ProductServiceService } from 'src/app/services/product-service.service';
 
 @Component({
@@ -12,7 +13,10 @@ export class SelectPackageComponent {
 
   constructor(
     private toast:NgToastService,
-    private productserv:ProductServiceService){}
+    private productserv:ProductServiceService,
+    public orderser:OrderformService,
+
+    ){}
 
   public packages:any=[];
   //public selectedPackage:any;
@@ -27,7 +31,10 @@ this.productserv.getPackage()
 
 
 populatePackage(selectedPackage:Package){
-this.productserv.product=selectedPackage;
+this.orderser.orderformobj.packageId=selectedPackage.id
+this.orderser.orderformobj.totalCost=selectedPackage.price
+
 }
+
 
 }
