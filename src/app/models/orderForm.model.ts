@@ -5,6 +5,7 @@ import { Card } from "./payment.model";
 export class OrderForm{
   id:number=0;
   isScheduledLater!:Date
+  date_time:Date=new Date()
   customerName:string="";
   status!:string
   paymentStatus!:string

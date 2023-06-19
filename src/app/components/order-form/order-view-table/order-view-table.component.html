@@ -7,7 +7,7 @@
       <p><strong>Car Name:</strong> {{orderobj.car.name}}</p>
       <p><strong>Car Model:</strong> {{orderobj.car.model}}</p>
       <p><strong>Car Number:</strong>{{orderobj.car.carNumber}}</p>
-      <p><strong>Car Number:</strong>{{convertdate()}}</p>
+      <!-- <p><strong>:</strong>{{convertdate()}}</p> -->
     </div>
 
     <div class="order-card">
@@ -16,6 +16,8 @@
       <p><strong>Address:</strong>{{orderobj.address.custAddress}}</p>
       <p><strong>City:</strong>{{orderobj.address.city}}</p>
       <p><strong>Zip:</strong>{{orderobj.address.pincode}}</p>
+      <p><strong>Washing Schedule At:</strong>{{this.orderser.orderformobj.isScheduledLater|date :'yyyy-MM-dd hh:mm:ss'}}</p>
+
     </div>
 
     <div class="order-card">
@@ -24,7 +26,7 @@
         <thead>
           <tr>
             <th>Product</th>
-            <th>Quantity</th>
+            <th>Description</th>
             <th>Price</th>
           </tr>
         </thead>

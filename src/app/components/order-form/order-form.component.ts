@@ -50,7 +50,8 @@ let time1=new Date('2018-04-07 09:00:00')
 let time2=new Date('2018-04-07 22:00:00')
 
 if(givendate.getDate()>=todayDate.getDate()){
-  if(giventime>=time1.getHours() && giventime<=time2.getHours() && giventime>todayDate.getHours()+1){
+  // && giventime<=time2.getHours() && giventime>todayDate.getHours()+1
+  if(giventime>time1.getHours()){
     this.orderview.setDataForPreview(this.orderser.orderformobj)
     this.router.navigate(['/home','selectpackage','form','orderview'])
   }

@@ -77,9 +77,10 @@ return formattedDateTime
     this.orderser.addData(orderformobj)
     .subscribe(val=>{
       // this.toast.success({detail:"SUCCESS",summary:"Data Added Successfully",duration:5000});
-      let myObject=val
-      window.localStorage.setItem("myObject", JSON.stringify(myObject));
-      console.log(window.localStorage.getItem("myObject"))
+    //  let myObject=val
+     // window.localStorage.setItem("myObject", JSON.stringify(myObject));
+     // console.log(window.localStorage.getItem("myObject"))
+     this.orderser.orderformobj.id=val.id
     })
   }
 

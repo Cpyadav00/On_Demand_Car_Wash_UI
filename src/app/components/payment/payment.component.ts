@@ -53,6 +53,7 @@ export class PaymentComponent {
     let todayDate=new Date()
    let giventime=givendate.getTime()
    if(givendate>todayDate){
+    this.orderser.orderformobj.paymentStatus="Paid"
     this.orderser.updateOrder()
     .subscribe(val=>{
       this.toast.success({detail:"SUCCESS",summary:"Payment Was Successfull",duration:5000});
@@ -60,6 +61,7 @@ export class PaymentComponent {
       // let myObject=this.orderser.orderformobj
       // window.localStorage.setItem("orderId", myObject.id.toString());
       //   console.log(window.localStorage.getItem("orderId"))
+
     })
   }
   else{

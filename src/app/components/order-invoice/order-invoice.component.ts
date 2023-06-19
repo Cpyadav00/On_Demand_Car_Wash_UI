@@ -16,11 +16,16 @@ import { UserStoreService } from 'src/app/services/user-store.service';
   styleUrls: ['./order-invoice.component.css']
 })
 export class OrderInvoiceComponent {
+  package:Package=new Package()
 constructor(
-  public orderser:OrderformService
+  public orderser:OrderformService,
+  private productserv:ProductServiceService
 ){}
-fu(){
- 
+ngOnInit(){
+  this.productserv.getPackageById(this.orderser.orderformobj.packageId)
+  .subscribe(val=>{
+    this.package=val;
+  })
 }
 
 }

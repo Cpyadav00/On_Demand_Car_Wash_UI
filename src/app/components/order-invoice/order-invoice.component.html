@@ -4,23 +4,24 @@
 
   <div class="order-card">
     <h3>Order Details</h3>
-    <p><strong>Order ID:</strong> #{{this.orderser.orderformobj.customerName}}</p>
-    <p><strong>Date:</strong> {{this.orderser.orderformobj.isScheduledLater | date :'yyyy-MM-dd'}}</p>
-    <p><strong>Status:</strong>{{this.orderser.orderformobj.customerName}}</p>
+    <p><strong>Order ID:</strong> #{{this.orderser.orderformobj.id}}</p>
+    <p><strong>Date:</strong> {{this.orderser.orderformobj.date_time | date :'yyyy-MM-dd'}}</p>
+    <p><strong>Status:</strong>{{this.orderser.orderformobj.paymentStatus}}</p>
   </div>
   <div class="order-card">
     <h3>Car Details</h3>
-    <p><strong>Car Name:</strong> {{this.orderser.orderformobj.customerName}}</p>
-    <p><strong>Car Model:</strong> {{this.orderser.orderformobj.customerName}}</p>
-    <p><strong>Car Number:</strong>{{this.orderser.orderformobj.customerName}}</p>
+    <p><strong>Car Name:</strong> {{this.orderser.orderformobj.car.name}}</p>
+    <p><strong>Car Model:</strong> {{this.orderser.orderformobj.car.model}}</p>
+    <p><strong>Car Number:</strong>{{this.orderser.orderformobj.car.carNumber}}</p>
   </div>
 
   <div class="order-card">
     <h3>Washing Address</h3>
     <p><strong>Name:</strong>{{this.orderser.orderformobj.customerName}}</p>
-    <p><strong>Address:</strong>{{this.orderser.orderformobj.customerName}}</p>
-    <p><strong>City:</strong>{{this.orderser.orderformobj.customerName}}</p>
-    <p><strong>Zip:</strong>{{this.orderser.orderformobj.customerName}}</p>
+    <p><strong>Address:</strong>{{this.orderser.orderformobj.address.custAddress}}</p>
+    <p><strong>City:</strong>{{this.orderser.orderformobj.address.city}}</p>
+    <p><strong>Zip:</strong>{{this.orderser.orderformobj.address.pincode}}</p>
+    <p><strong>Washing Schedule At:</strong>{{this.orderser.orderformobj.isScheduledLater|date :'yyyy-MM-dd hh:mm:ss'}}</p>
   </div>
 
   <div class="order-card">
@@ -29,15 +30,15 @@
       <thead>
         <tr>
           <th>Product</th>
-          <th>Quantity</th>
+          <th>Description</th>
           <th>Price</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>{{this.orderser.orderformobj.customerName}}</td>
-          <td>{{this.orderser.orderformobj.customerName}}</td>
-          <td>${{this.orderser.orderformobj.customerName}}</td>
+          <td>{{this.package.name}}</td>
+          <td>{{this.package.description}}</td>
+          <td>${{this.package.price}}</td>
         </tr>
       </tbody>
     </table>
@@ -45,9 +46,9 @@
 
   <div class="order-card">
     <h3>Total</h3>
-    <p><strong>Subtotal:</strong> ${{this.orderser.orderformobj.customerName}}</p>
-    <p><strong>Tax:</strong> ${{this.orderser.orderformobj.customerName}}</p>
-    <p><strong>Total:</strong> ${{this.orderser.orderformobj.customerName}}</p>
+    <p><strong>Subtotal:</strong> ${{this.package.price}}</p>
+    <p><strong>Tax:</strong> ${{this.package.price*.10}}</p>
+    <p><strong>Total:</strong> ${{this.orderser.orderformobj.totalCost}}</p>
   </div>
 </div>
 <div class="order-buttons">
