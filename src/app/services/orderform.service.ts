@@ -14,16 +14,19 @@ export class OrderformService {
 
   constructor(private http:HttpClient) { }
 
-  demoaddData(){
-    return this.orderformobj
-  }
+  // demoaddData(){
+  //   return this.orderformobj
+  // }
   addData(orderformobj1:OrderForm){
 
     return this.http.post<OrderForm>("https://localhost:44354/api/Order/AddOrder",orderformobj1)
   }
-updateOrder()
+updateOrder(order:OrderForm)
 {
-  return this.http.put<OrderForm>("https://localhost:44354/api/Order/UpdateOrder",this.orderformobj)
+  return this.http.put<OrderForm>("https://localhost:44354/api/Order/UpdateOrder",order)
+}
+getOrderById(id:number){
+  return this.http.get<OrderForm>("https://localhost:44354/api/Order/GetOrder/"+id)
 }
 
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,9 @@ export class AuthService {
   {
     return this.http.post<any>(`${this.baseUrl}Login`,loginObj);
 
+  }
+  getUserById(custId:number){
+    return this.http.get<User>("https://localhost:44354/api/UserDetail/GetUserById/"+custId)
   }
 //
 signOut()

@@ -47,17 +47,28 @@ let giventime=givendate.getHours()
 console.log(giventime-2)
 
 let time1=new Date('2018-04-07 09:00:00')
-let time2=new Date('2018-04-07 22:00:00')
+let time2=new Date('2018-04-07 18:00:00')
 
-if(givendate.getDate()>=todayDate.getDate()){
+if(givendate.getDate()>=todayDate.getDate() && giventime>time1.getHours() && giventime<time2.getHours()){
   // && giventime<=time2.getHours() && giventime>todayDate.getHours()+1
-  if(giventime>time1.getHours()){
+  if(givendate.getDate()==todayDate.getDate() && giventime>time1.getHours() && giventime<time2.getHours())
+  {
+    if(giventime>todayDate.getHours()+2){
+    this.orderview.setDataForPreview(this.orderser.orderformobj)
+    this.router.navigate(['/home','selectpackage','form','orderview'])
+    }
+   else{
+    this.toast.error({detail:"ERROR",summary:"Change Time To 3Hr From Now",duration:5000});
+   }
+  }
+  else if(givendate.getDate()>todayDate.getDate() && giventime>time1.getHours() && giventime<time2.getHours())
+  {
     this.orderview.setDataForPreview(this.orderser.orderformobj)
     this.router.navigate(['/home','selectpackage','form','orderview'])
   }
   else
   {
-    this.toast.error({detail:"ERROR",summary:"Time Should be greater than 2hr",duration:5000});
+    this.toast.error({detail:"ERROR",summary:"Service Time is 9AM to 6PM",duration:5000});
   }
 }
 else{

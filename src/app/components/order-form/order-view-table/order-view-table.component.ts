@@ -19,6 +19,64 @@ import { UserStoreService } from 'src/app/services/user-store.service';
 })
 export class OrderViewTableComponent {
 
+  paymetRequest:google.payments.api.PaymentDataRequest={
+    apiVersion:2,
+    apiVersionMinor:0,
+    allowedPaymentMethods:[
+      {
+        type:'CARD',
+        parameters:{
+          allowedAuthMethods:['PAN_ONLY','CRYPTOGRAM_3DS'],
+          allowedCardNetworks:['AMEX','MASTERCARD','VISA','MAESTRO']
+        },
+    tokenizationSpecification:{
+      type:'PAYMENT_GATEWAY',
+      parameters:{
+        gateway:'example',
+        gatewayMerchandId:'exampleGatewayMerchantId'
+      }
+    }
+      }
+    ],
+    merchantInfo:{
+      merchantId:'12344578901234567890',
+      merchantName:'Demo Merchant'
+    },
+    transactionInfo:{
+      totalPriceStatus:'FINAL',
+      totalPriceLabel:'Total',
+      totalPrice:'0.10',
+      currencyCode:'EUR',
+      countryCode:'BR'
+    },
+    callbackIntents:['PAYMENT_AUTHORIZATION']
+  };
+
+  onLoadPaymentData=(
+    event:Event
+  ):void=>{
+    const eventDetails=event as CustomEvent<google.payments.api.PaymentData>;
+    console.log('load payemt data',eventDetails.detail)
+  }
+
+  onPaymentDataAuthorized:google.payments.api.PaymentAuthorizedHandler=(
+    paymentData
+  )=>{
+    console.log("payment authorized",paymentData)
+    return{
+      transactionState:'SUCCESS'
+    };
+  }
+
+  onError=(event:ErrorEvent):void=>{
+    console.error('error',event.error)
+  }
+
+
+
+
+
+
   public fullNames:string=''
   public date:number=0
   public package:Package=new Package()
@@ -49,7 +107,7 @@ private toast:NgToastService
     this.orderobj=this.orderview.sendDataForPreview()
     //this.orderobj.customerName=this.fullNames
 
-    this.packserv.getPackageById(this.orderser.orderformobj.packageId)
+    this.packserv.getPackageById(this.orderobj.packageId)
     .subscribe(val=>
       {
         this.package=val
@@ -76,11 +134,12 @@ return formattedDateTime
     orderformobj.totalCost=orderformobj.totalCost+orderformobj.totalCost*0.10
     this.orderser.addData(orderformobj)
     .subscribe(val=>{
-      // this.toast.success({detail:"SUCCESS",summary:"Data Added Successfully",duration:5000});
-    //  let myObject=val
-     // window.localStorage.setItem("myObject", JSON.stringify(myObject));
-     // console.log(window.localStorage.getItem("myObject"))
-     this.orderser.orderformobj.id=val.id
+      // this.toast.success({detail:"SUCCESS",summary:"Ordered Successfully",duration:5000});
+      window.localStorage.setItem("orderId", JSON.stringify(val.id));
+      window.localStorage.setItem("carId", JSON.stringify(val.carId));
+      window.localStorage.setItem("packageId", JSON.stringify(val.packageId));
+      window.localStorage.setItem("addressId", JSON.stringify(val.addressId));
+       window.location.reload()
     })
   }
 

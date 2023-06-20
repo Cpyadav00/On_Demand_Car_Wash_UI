@@ -20,18 +20,19 @@ import { CarsComponent } from './components/cars/cars.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
 import { OrderViewTableComponent } from './components/order-form/order-view-table/order-view-table.component';
 import { SelectPackageComponent } from './components/select-package/select-package.component';
-import { PaymentComponent } from './components/payment/payment.component';
 import { OrderInvoiceComponent } from './components/order-invoice/order-invoice.component';
+import { WashRequestComponent } from './components/wash-request/wash-request.component';
 
 
 const routes: Routes = [
-  {path:'', component:LoginComponent},
+  {path:'', component:HomeComponent},
   {path:'home', component:HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'signup', component:SignupComponent},
   {path:'admin', component:AdminDashboardComponent,canActivate:[AuthGuard]},
   {path:'customer', component:CustomerDashboardComponent,canActivate:[AuthGuard]},
   {path:'washer', component:WasherDashboardComponent,canActivate:[AuthGuard]},
+  {path:'washer/request', component:WashRequestComponent,canActivate:[AuthGuard]},
   {path:'admin/services', component:AllPackageComponent,canActivate:[AuthGuard]},
   {path:'admin/form', component:CustomerFormComponent,canActivate:[AuthGuard]},
   {path:'admin/services/form', component:FormForPackageComponent,canActivate:[AuthGuard]},
@@ -45,9 +46,11 @@ const routes: Routes = [
   {path:'admin/invoice', component:InvoiceComponent,canActivate:[AuthGuard]},
    {path:'home/selectpackage/form/orderview', component:OrderViewTableComponent,canActivate:[AuthGuard]},
   {path:'home/selectpackage/form', component:OrderFormComponent,canActivate:[AuthGuard]},
-  {path:'home/selectpackage/form/orderview/payment', component:PaymentComponent,canActivate:[AuthGuard]},
-  {path:'home/selectpackage/form/orderview/payment/invoice', component:OrderInvoiceComponent,canActivate:[AuthGuard]},
-  // {path:'**', component:NotFoundComponent},
+  {path:'home/selectpackage/form/orderview/invoice', component:OrderInvoiceComponent,canActivate:[AuthGuard]},
+  {path:'home/selectpackage/form/orderview/invoice', component:OrderInvoiceComponent,canActivate:[AuthGuard]},
+
+
+   {path:'**', component:NotFoundComponent},
 
 ];
 

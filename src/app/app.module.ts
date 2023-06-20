@@ -27,8 +27,9 @@ import { CarsComponent } from './components/cars/cars.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
 import { OrderViewTableComponent } from './components/order-form/order-view-table/order-view-table.component';
 import { SelectPackageComponent } from './components/select-package/select-package.component';
-import { PaymentComponent } from './components/payment/payment.component';
 import { OrderInvoiceComponent } from './components/order-invoice/order-invoice.component';
+import { WashRequestComponent } from './components/wash-request/wash-request.component';
+import {  GooglePayButtonModule } from '@google-pay/button-angular';
 
 
 
@@ -55,8 +56,8 @@ import { OrderInvoiceComponent } from './components/order-invoice/order-invoice.
     InvoiceComponent,
     OrderViewTableComponent,
     SelectPackageComponent,
-    PaymentComponent,
     OrderInvoiceComponent,
+    WashRequestComponent,
 
   ],
   imports: [
@@ -65,7 +66,8 @@ import { OrderInvoiceComponent } from './components/order-invoice/order-invoice.
     ReactiveFormsModule,
     HttpClientModule,
     NgToastModule,
-    FormsModule
+    FormsModule,
+    GooglePayButtonModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,
