@@ -30,6 +30,10 @@ import { SelectPackageComponent } from './components/select-package/select-packa
 import { OrderInvoiceComponent } from './components/order-invoice/order-invoice.component';
 import { WashRequestComponent } from './components/wash-request/wash-request.component';
 import {  GooglePayButtonModule } from '@google-pay/button-angular';
+import { ScheduledWashComponent } from './components/scheduled-wash/scheduled-wash.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { ScheduledWashForCustomerComponent } from './components/scheduled-wash-for-customer/scheduled-wash-for-customer.component';
+import { TestingComponent } from './components/testing/testing.component';
 
 
 
@@ -58,6 +62,10 @@ import {  GooglePayButtonModule } from '@google-pay/button-angular';
     SelectPackageComponent,
     OrderInvoiceComponent,
     WashRequestComponent,
+    ScheduledWashComponent,
+    OrderDetailsComponent,
+    ScheduledWashForCustomerComponent,
+    TestingComponent
 
   ],
   imports: [

@@ -14,12 +14,12 @@ export class OrderForm{
   totalCost:number=0;
   instructions:string="";
   custId!:string;
+  washerId:number=0;
   addressId:number=0;
   packageId:number=0;
   carId:number=0;
  address:Address=new Address()
  car:Car=new Car()
-//  payment:Card=new Card()
 
 }
 

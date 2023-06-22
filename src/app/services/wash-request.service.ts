@@ -13,7 +13,15 @@ export class WashRequestService {
 
   getRequest(){
     //return this.http.get<any>("")
-    return this.http.get<OrderForm>('https://localhost:44354/api/Order/GetAllOrder');
+    return this.http.get<OrderForm>('https://localhost:44354/api/Order/GetAllRequest');
+  }
+
+  getsheduled(id:number){
+    return this.http.get<OrderForm>("https://localhost:44354/api/Order/ScheduledWash/"+id)
+  }
+
+  scheduledWashForCustomer(id:number){
+    return this.http.get<OrderForm>("https://localhost:44354/api/Order/ScheduledWashForCustomer/"+id)
   }
 
 }

@@ -21,8 +21,9 @@
 
 
        <td>
-          <button type="button" class="btn btn-secondary mb-2" (click)="populate(item)" routerLink="orderDetails" >View Details</button>
-        <button type="button" class="btn btn-secondary mb-2" (click)="updateData(item.id)" >Approve</button>
+        <button type="button" class="btn btn-secondary mb-2" (click)="populate(item)" routerLink="orderDetails" >View Details</button>
+          <button type="button" class="btn btn-secondary mb-2" (click)="updateDelivery(item.id)"  >Delivered</button>
+        <button type="button" class="btn btn-secondary mb-2" (click)="updateDeliveryAndPay(item.id)" >Paid and Delivered</button>
         </td>
       </tr>
     </tbody>

@@ -29,4 +29,12 @@ getOrderById(id:number){
   return this.http.get<OrderForm>("https://localhost:44354/api/Order/GetOrder/"+id)
 }
 
+getAllPrevoiusOrder(id:number){
+  return this.http.get<OrderForm>("https://localhost:44354/api/Order/AllPreviousOrder/"+id)
+}
+AllPreviousOrderForCustomer(id:number){
+  return this.http.get<OrderForm>("https://localhost:44354/api/Order/AllPreviousOrderForCustomer/"+id)
+}
+
+
 }

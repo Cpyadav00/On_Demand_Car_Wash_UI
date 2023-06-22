@@ -22,6 +22,9 @@ import { OrderViewTableComponent } from './components/order-form/order-view-tabl
 import { SelectPackageComponent } from './components/select-package/select-package.component';
 import { OrderInvoiceComponent } from './components/order-invoice/order-invoice.component';
 import { WashRequestComponent } from './components/wash-request/wash-request.component';
+import { ScheduledWashComponent } from './components/scheduled-wash/scheduled-wash.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { TestingComponent } from './components/testing/testing.component';
 
 
 const routes: Routes = [
@@ -31,8 +34,15 @@ const routes: Routes = [
   {path:'signup', component:SignupComponent},
   {path:'admin', component:AdminDashboardComponent,canActivate:[AuthGuard]},
   {path:'customer', component:CustomerDashboardComponent,canActivate:[AuthGuard]},
+  {path:'customer/scheduled', component:ScheduledWashComponent,canActivate:[AuthGuard]},
+  {path:'customer/scheduled/orderDetails', component:OrderDetailsComponent,canActivate:[AuthGuard]},
+  {path:'customer/orderDetails', component:OrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'washer', component:WasherDashboardComponent,canActivate:[AuthGuard]},
   {path:'washer/request', component:WashRequestComponent,canActivate:[AuthGuard]},
+  {path:'washer/scheduled', component:ScheduledWashComponent,canActivate:[AuthGuard]},
+  {path:'washer/request/orderDetails', component:OrderDetailsComponent,canActivate:[AuthGuard]},
+  {path:'washer/scheduled/orderDetails', component:OrderDetailsComponent,canActivate:[AuthGuard]},
+
   {path:'admin/services', component:AllPackageComponent,canActivate:[AuthGuard]},
   {path:'admin/form', component:CustomerFormComponent,canActivate:[AuthGuard]},
   {path:'admin/services/form', component:FormForPackageComponent,canActivate:[AuthGuard]},
@@ -41,6 +51,7 @@ const routes: Routes = [
   {path:'admin/services/update', component:UpdatePackageComponent,canActivate:[AuthGuard]},
   {path:'admin/allUsers', component:AllUsersComponent,canActivate:[AuthGuard]},
   {path:'contact', component:ContactUsComponent},
+  {path:'testing', component:TestingComponent},
   {path:'admin/orders', component:TotalOrdersComponent,canActivate:[AuthGuard]},
   {path:'admin/cars', component:CarsComponent,canActivate:[AuthGuard]},
   {path:'admin/invoice', component:InvoiceComponent,canActivate:[AuthGuard]},

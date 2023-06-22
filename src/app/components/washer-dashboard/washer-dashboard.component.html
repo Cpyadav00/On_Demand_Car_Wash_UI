@@ -1,3 +1,8 @@
+<div *ngIf="isRole()">
+  <h1 id="IdName">Welcome, {{fullName}}</h1>
+
+</div>
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -8,8 +13,7 @@
         <div class="col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="" routerLink="request">New Requests</a></li>
-            <li><a href="">Already done</a></li>
-            <li><a href="">Scheduled Wash</a></li>
+            <li><a href="" routerLink="scheduled">Scheduled Wash</a></li>
           </ul>
         </div>
         <div class="col-sm-10 main">
@@ -19,20 +23,27 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>Id</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
+                  <th>Customer Name</th>
+                  <th>Phone Number</th>
+                  <th>Status</th>
+                  <th>Payment Status</th>
+                  <th>Total Cost</th>
+                  <th>Action</th>
+
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
+                <tr  *ngFor="let item of requests">
+                  <td>{{item.customerName}}</td>
+                  <td>{{item.phoneNumber}}</td>
+                  <td>{{item.status}}</td>
+                  <td>{{item.paymentStatus}}</td>
+                  <td>{{item.totalCost}}</td>
+                  <td><button *ngIf="item.paymentStatus=='Pending'" class="btn btn-success"
+                    (click)="changeToPaid(item.id)"
+                    >Paid</button></td>
+
+
                 </tr>
 
               </tbody>

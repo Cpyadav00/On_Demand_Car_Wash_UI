@@ -6,11 +6,11 @@ import { UserStoreService } from 'src/app/services/user-store.service';
 import { WashRequestService } from 'src/app/services/wash-request.service';
 
 @Component({
-  selector: 'app-wash-request',
-  templateUrl: './wash-request.component.html',
-  styleUrls: ['./wash-request.component.css']
+  selector: 'app-scheduled-wash-for-customer',
+  templateUrl: './scheduled-wash-for-customer.component.html',
+  styleUrls: ['./scheduled-wash-for-customer.component.css']
 })
-export class WashRequestComponent {
+export class ScheduledWashForCustomerComponent {
   public order:any=[];
   private userId:number=0
   constructor(
@@ -27,27 +27,42 @@ export class WashRequestComponent {
   }
 
   ngOnInit(){
-    this.requestserv.getRequest()
+    this.requestserv.scheduledWashForCustomer(this.userId)
     .subscribe(val=>{
       this.order=val
     })
 
   }
 
-  updateData(id:number){
+  updateDelivery(id:number){
     this.orderserv.getOrderById(id)
     .subscribe(val1=>{
-     val1.washerId=this.userId
+     val1.status="Delivered"
       this.orderserv.updateOrder(val1)
       .subscribe(val2=>{
-        //console.log(val2);
+        console.log(val2);
       })
     })
-   window.location.reload();
+    //window.location.reload();
+  }
+
+  updateDeliveryAndPay(id:number){
+    this.orderserv.getOrderById(id)
+    .subscribe(val1=>{
+     val1.status="Delivered"
+     val1.paymentStatus="Paid"
+      this.orderserv.updateOrder(val1)
+      .subscribe(val2=>{
+        console.log(val2);
+      })
+    })
+    //window.location.reload();
   }
 
   populate(item:OrderForm){
     this.orderserv.orderformobj=item
   }
+
+
 
 }
