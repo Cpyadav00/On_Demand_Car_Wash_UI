@@ -15,7 +15,6 @@ import { UpdatePackageComponent } from './components/all-package/update-package/
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { AllUsersComponent } from './components/all-users/all-users.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { TotalOrdersComponent } from './components/total-orders/total-orders.component';
 import { CarsComponent } from './components/cars/cars.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
 import { OrderViewTableComponent } from './components/order-form/order-view-table/order-view-table.component';
@@ -25,6 +24,10 @@ import { WashRequestComponent } from './components/wash-request/wash-request.com
 import { ScheduledWashComponent } from './components/scheduled-wash/scheduled-wash.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { TestingComponent } from './components/testing/testing.component';
+import { AfterWashOrderDetailsComponent } from './components/after-wash-order-details/after-wash-order-details.component';
+import { ScheduledWashForCustomerComponent } from './components/scheduled-wash-for-customer/scheduled-wash-for-customer.component';
+import { RatingPageComponent } from './components/rating-page/rating-page.component';
+import { WasherDetailsComponent } from './components/washer-details/washer-details.component';
 
 
 const routes: Routes = [
@@ -32,34 +35,39 @@ const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'signup', component:SignupComponent},
+  {path:'contact', component:ContactUsComponent},
+  {path:'testing', component:TestingComponent},
+
   {path:'admin', component:AdminDashboardComponent,canActivate:[AuthGuard]},
+  {path:'admin/form', component:CustomerFormComponent,canActivate:[AuthGuard]},
+  {path:'admin/services', component:AllPackageComponent,canActivate:[AuthGuard]},
+  {path:'admin/services/form', component:FormForPackageComponent,canActivate:[AuthGuard]},
+  {path:'admin/services/update', component:UpdatePackageComponent,canActivate:[AuthGuard]},
+  {path:'admin/allUsers', component:AllUsersComponent,canActivate:[AuthGuard]},
+  {path:'admin/cars', component:CarsComponent,canActivate:[AuthGuard]},
+  {path:'admin/washersList', component:WasherDetailsComponent,canActivate:[AuthGuard]},
+  {path:'admin/orders', component:InvoiceComponent,canActivate:[AuthGuard]},
+  {path:'admin/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
+  {path:'admin/orders/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
+
   {path:'customer', component:CustomerDashboardComponent,canActivate:[AuthGuard]},
-  {path:'customer/scheduled', component:ScheduledWashComponent,canActivate:[AuthGuard]},
-  {path:'customer/scheduled/orderDetails', component:OrderDetailsComponent,canActivate:[AuthGuard]},
-  {path:'customer/orderDetails', component:OrderDetailsComponent,canActivate:[AuthGuard]},
+  {path:'customer/rating', component:RatingPageComponent,canActivate:[AuthGuard]},
+  {path:'customer/scheduled', component:ScheduledWashForCustomerComponent,canActivate:[AuthGuard]},
+  {path:'customer/scheduled/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
+  {path:'customer/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
+
   {path:'washer', component:WasherDashboardComponent,canActivate:[AuthGuard]},
+  {path:'washer/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'washer/request', component:WashRequestComponent,canActivate:[AuthGuard]},
   {path:'washer/scheduled', component:ScheduledWashComponent,canActivate:[AuthGuard]},
   {path:'washer/request/orderDetails', component:OrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'washer/scheduled/orderDetails', component:OrderDetailsComponent,canActivate:[AuthGuard]},
 
-  {path:'admin/services', component:AllPackageComponent,canActivate:[AuthGuard]},
-  {path:'admin/form', component:CustomerFormComponent,canActivate:[AuthGuard]},
-  {path:'admin/services/form', component:FormForPackageComponent,canActivate:[AuthGuard]},
   {path:'home/selectpackage', component:SelectPackageComponent,canActivate:[AuthGuard]},
-  {path:'selectpackage', component:SelectPackageComponent,canActivate:[AuthGuard]},
-  {path:'admin/services/update', component:UpdatePackageComponent,canActivate:[AuthGuard]},
-  {path:'admin/allUsers', component:AllUsersComponent,canActivate:[AuthGuard]},
-  {path:'contact', component:ContactUsComponent},
-  {path:'testing', component:TestingComponent},
-  {path:'admin/orders', component:TotalOrdersComponent,canActivate:[AuthGuard]},
-  {path:'admin/cars', component:CarsComponent,canActivate:[AuthGuard]},
-  {path:'admin/invoice', component:InvoiceComponent,canActivate:[AuthGuard]},
-   {path:'home/selectpackage/form/orderview', component:OrderViewTableComponent,canActivate:[AuthGuard]},
+  {path:'home/selectpackage/form/orderview', component:OrderViewTableComponent,canActivate:[AuthGuard]},
   {path:'home/selectpackage/form', component:OrderFormComponent,canActivate:[AuthGuard]},
   {path:'home/selectpackage/form/orderview/invoice', component:OrderInvoiceComponent,canActivate:[AuthGuard]},
   {path:'home/selectpackage/form/orderview/invoice', component:OrderInvoiceComponent,canActivate:[AuthGuard]},
-
 
    {path:'**', component:NotFoundComponent},
 

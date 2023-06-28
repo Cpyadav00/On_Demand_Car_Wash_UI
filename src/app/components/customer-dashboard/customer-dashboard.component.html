@@ -39,7 +39,9 @@
                   <td>{{item.status}}</td>
                   <td>{{item.paymentStatus}}</td>
                   <td>{{item.totalCost}}</td>
-                  <td><button class="btn btn-success" routerLink="orderDetails" (click)="populate(item)">View Order Details</button></td>
+                  <td><button class="btn btn-success" routerLink="orderDetails" (click)="populate(item)">View Order Details</button>
+                    <button class="btn btn-success" id="rating" (click)="populate(item)" routerLink="rating" >Rate Wash</button>
+                  </td>
 
 
                 </tr>

@@ -25,6 +25,17 @@
     <p><strong>Washing Schedule At:</strong>{{this.order.isScheduledLater|date :'yyyy-MM-dd hh:mm:ss'}}</p>
   </div>
 
+
+  <div class="order-card">
+    <h3>Washer Details</h3>
+    <p *ngIf="user; else noUser"><strong>Name:</strong>{{user.firstName + user.lastName}}</p>
+    <p *ngIf="user;"><strong>Phone Number:</strong>{{user.phoneNumber}}</p>
+  </div>
+
+  <ng-template #noUser>
+    <h2 style="color: brown;">Washer is Not Assigend Yet</h2>
+  </ng-template>
+
   <div class="order-card">
     <h3>Package Details</h3>
     <table class="table">
@@ -51,7 +62,5 @@
     <p><strong>Tax:</strong> ${{this.package.price*.10}}</p>
     <p><strong>Total:</strong> ${{this.order.totalCost}}</p>
   </div>
-
-  
 </div>
 

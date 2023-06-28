@@ -21,7 +21,6 @@ import { OrderFormComponent } from './components/order-form/order-form.component
 import { UpdatePackageComponent } from './components/all-package/update-package/update-package.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { AllUsersComponent } from './components/all-users/all-users.component';
-import { TotalOrdersComponent } from './components/total-orders/total-orders.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CarsComponent } from './components/cars/cars.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
@@ -34,6 +33,9 @@ import { ScheduledWashComponent } from './components/scheduled-wash/scheduled-wa
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { ScheduledWashForCustomerComponent } from './components/scheduled-wash-for-customer/scheduled-wash-for-customer.component';
 import { TestingComponent } from './components/testing/testing.component';
+import { AfterWashOrderDetailsComponent } from './components/after-wash-order-details/after-wash-order-details.component';
+import { RatingPageComponent } from './components/rating-page/rating-page.component';
+import { WasherDetailsComponent } from './components/washer-details/washer-details.component';
 
 
 
@@ -54,7 +56,6 @@ import { TestingComponent } from './components/testing/testing.component';
     UpdatePackageComponent,
     ContactUsComponent,
     AllUsersComponent,
-    TotalOrdersComponent,
     NotFoundComponent,
     CarsComponent,
     InvoiceComponent,
@@ -65,7 +66,10 @@ import { TestingComponent } from './components/testing/testing.component';
     ScheduledWashComponent,
     OrderDetailsComponent,
     ScheduledWashForCustomerComponent,
-    TestingComponent
+    TestingComponent,
+    AfterWashOrderDetailsComponent,
+    RatingPageComponent,
+    WasherDetailsComponent
 
   ],
   imports: [

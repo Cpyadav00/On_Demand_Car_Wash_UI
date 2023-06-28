@@ -36,5 +36,8 @@ AllPreviousOrderForCustomer(id:number){
   return this.http.get<OrderForm>("https://localhost:44354/api/Order/AllPreviousOrderForCustomer/"+id)
 }
 
+allDeliveredOrderForAdmin(){
+  return this.http.get<OrderForm>("https://localhost:44354/api/Order/AllDeliveredOrderForAdmin/")
+}
 
 }

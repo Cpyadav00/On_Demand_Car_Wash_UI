@@ -4,11 +4,13 @@
       <img src="\assets\userIcon.png" width="50">
     </div>
     <span class="dot"></span>
-    <span class="name mb-1 fw-500">{{user.firstName}}</span>
-    <small class="text-black-50">{{user.lastName}}</small>
-    <small class="text-black-50 font-weight-bold">#{{user.id}}</small>
-    <div class="location mt-4">
-      <span class="d-block"><i class="fa fa-map-marker start"></i> <small class="text-truncate ml-2">{{user.phoneNumber}}</small></span>
+    <span class="name mb-1 fw-500">First Name: {{user.firstName}}</span>
+    <small class="text-black-50">Last Name: {{user.lastName}}</small>
+    <small class="text-black-50 font-weight-bold">User Id: #{{user.id}}</small>
+    <small class="text-black-50 font-weight-bold">Washer Rating: {{averageRating*5}}☆</small>
+
+    <div class="location mt-3">
+      <span class="d-block"><i class="fa fa-map-marker start"></i> <small class="text-truncate ml-2">Phone Number: {{user.phoneNumber}}</small></span>
     </div>
     <div class="rate bg-success py-3 text-white mt-3">
       <h6 class="mb-0">Rate your Washer</h6>
@@ -25,7 +27,7 @@
         <label for="1">☆</label>
       </div>
       <div class="buttons px-4 mt-0">
-        <button class="btn btn-warning btn-block rating-submit" (click)="rateWasher()">Submit</button>
+        <button class="btn btn-warning btn-block rating-submit" (click)="rateWasher()" routerLink="..">Submit</button>
       </div>
     </div>
   </div>

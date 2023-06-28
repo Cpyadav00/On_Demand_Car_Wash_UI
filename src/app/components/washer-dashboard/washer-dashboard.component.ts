@@ -57,5 +57,8 @@ export class WasherDashboardComponent {
       //window.location.reload();
     }
 
+    populate(item:OrderForm){
+      this.orderserv.orderformobj=item
+    }
 
 }

@@ -6,7 +6,7 @@ import { Injectable, OnInit } from '@angular/core';
 })
 export class InvoiceService  {
 
-  private baseUrl:string="https://localhost:44354/api/ViewInvoice/";
+
 
   public invoices!:any[];
   public invoice!:any;
@@ -15,11 +15,8 @@ export class InvoiceService  {
   constructor(private http:HttpClient) { }
 
   getAllInvoice(){
-    return this.http.get<any>(this.baseUrl+'ViewAllInvoices');
+    return this.http.get<any>("https://localhost:44354/api/Order/GetAllOrder");
   }
 
-  getInvoiceById(id:number){
-    return this.http.get<any>(this.baseUrl+'ViewInvoiceById/'+id);
-  }
 
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgToastModule, NgToastService } from 'ng-angular-popup';
 import { Rating } from 'src/app/models/rating.model';
 import { User } from 'src/app/models/user.model';
 import { ApiService } from 'src/app/services/api.service';
@@ -6,24 +7,31 @@ import { OrderformService } from 'src/app/services/orderform.service';
 import { RatingService } from 'src/app/services/rating.service';
 
 @Component({
-  selector: 'app-testing',
-  templateUrl: './testing.component.html',
-  styleUrls: ['./testing.component.css']
+  selector: 'app-rating-page',
+  templateUrl: './rating-page.component.html',
+  styleUrls: ['./rating-page.component.css']
 })
-export class TestingComponent {
-   washerRating!:number;
+export class RatingPageComponent {
+    washerRating!:number;
    user:User=new User();
 
   rating: Rating=new Rating();
+  averageRating:any;
   orderid=window.localStorage.getItem("orderId")
   constructor(
     private ratingserv:RatingService,
     private orderserv:OrderformService,
-    private api:ApiService
+    private api:ApiService,
+    private toast:NgToastService
   ){
    this.api.getByIdUser(this.orderserv.orderformobj.washerId)
    .subscribe(val=>{
    this.user=val;
+   this.user.id=this.orderserv.orderformobj.washerId;
+   })
+   this.ratingserv.getRatingById(this.orderserv.orderformobj.washerId)
+   .subscribe(val=>{
+    this.averageRating=val;
    })
   }
 
@@ -34,7 +42,6 @@ export class TestingComponent {
     const rating4 = (document.getElementById('4') as HTMLInputElement).checked;
     const rating5 = (document.getElementById('5') as HTMLInputElement).checked;
 
-    //washerRating:any=0;
     if (rating1) {
       this.washerRating = 1;
     } else if (rating2) {
@@ -52,21 +59,11 @@ export class TestingComponent {
     this.rating.orderId=this.orderserv.orderformobj.id
     this.ratingserv.addrating(this.rating)
     .subscribe(val=>{
-      console.log(val);
+      this.toast.success({detail:"SUCCESS",summary:"Rated Successfully",duration:5000});
 
     })
 
-
-
-  console.log(this.washerRating)
-
   }
-
-
-
-
-
-
 
 
 }

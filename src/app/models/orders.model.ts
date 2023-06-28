@@ -8,4 +8,5 @@ export class Orders{
   adress:string="";
   carName:string="";
   carModel:string="";
+  washerName:string=""
 }

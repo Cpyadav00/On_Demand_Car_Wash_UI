@@ -43,7 +43,7 @@ export class ScheduledWashForCustomerComponent {
         console.log(val2);
       })
     })
-    //window.location.reload();
+    window.location.reload();
   }
 
   updateDeliveryAndPay(id:number){
@@ -56,7 +56,7 @@ export class ScheduledWashForCustomerComponent {
         console.log(val2);
       })
     })
-    //window.location.reload();
+    window.location.reload();
   }
 
   populate(item:OrderForm){

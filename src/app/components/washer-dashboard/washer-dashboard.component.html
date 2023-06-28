@@ -39,9 +39,11 @@
                   <td>{{item.status}}</td>
                   <td>{{item.paymentStatus}}</td>
                   <td>{{item.totalCost}}</td>
-                  <td><button *ngIf="item.paymentStatus=='Pending'" class="btn btn-success"
+                  <td><button *ngIf="item.paymentStatus=='Not Paid'" class="btn btn-success"
                     (click)="changeToPaid(item.id)"
-                    >Paid</button></td>
+                    >Paid</button>
+                    <button type="button" class="btn btn-secondary mb-2" (click)="populate(item)" routerLink="orderDetails" >View Details</button>
+                  </td>
 
 
                 </tr>

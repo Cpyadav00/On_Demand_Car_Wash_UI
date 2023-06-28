@@ -12,10 +12,19 @@ export class ApiService {
   ){}
 
   //User Services Started
-  
+
 
   getUser(){
     return this.http.get<any>(this.baseUrl+'UserDetail/GetUserDetails');
+  }
+
+
+  getWasher(){
+    return this.http.get<any>(this.baseUrl+'UserDetail/GetWasherDetails');
+  }
+
+  getByIdUser(id:number){
+    return this.http.get<any>(this.baseUrl+'UserDetail/GetUserById/'+id);
   }
 
   deleteUser(id:number){
