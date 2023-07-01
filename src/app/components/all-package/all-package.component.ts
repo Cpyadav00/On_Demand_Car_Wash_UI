@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { Package } from 'src/app/models/package.model';
 import { ApiService } from 'src/app/services/api.service';
@@ -13,7 +14,9 @@ export class AllPackageComponent implements OnInit {
 
   constructor(
     private toast:NgToastService,
-    private productserv:ProductServiceService){}
+    private productserv:ProductServiceService,
+    private router:Router
+    ){}
 
   public packages:any=[];
   //public selectedPackage:any;
@@ -49,6 +52,30 @@ if(confirm("Are you really want to delete this record ?"))
 populatePackage(selectedPackage:Package){
 this.productserv.product=selectedPackage;
 }
+
+pageSize: number = 6;
+  currentPage: number = 1;
+
+  get totalPages(): number {
+    return Math.ceil(this.packages.length / this.pageSize);
+  }
+
+  get pagedPackages(): any[] {
+    const startIndex = (this.currentPage - 1) * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    return this.packages.slice(startIndex, endIndex);
+  }
+
+  get pages(): number[] {
+    return Array.from({ length: this.totalPages }, (_, index) => index + 1);
+  }
+
+  changePage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
+    this.router.navigate(['/admin','services'])
+  }
 
 
 }

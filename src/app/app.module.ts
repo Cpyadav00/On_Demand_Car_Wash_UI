@@ -36,6 +36,12 @@ import { TestingComponent } from './components/testing/testing.component';
 import { AfterWashOrderDetailsComponent } from './components/after-wash-order-details/after-wash-order-details.component';
 import { RatingPageComponent } from './components/rating-page/rating-page.component';
 import { WasherDetailsComponent } from './components/washer-details/washer-details.component';
+import { RestPasswordComponent } from './components/rest-password/rest-password.component';
+import { RestPasswordFormComponent } from './components/rest-password-form/rest-password-form.component';
+import { AdminSideBarComponent } from './components/admin-side-bar/admin-side-bar.component';
+import { AdminListComponent } from './components/admin-list/admin-list.component';
+import { CustomerListComponent } from './components/customer-list/customer-list.component';
+import { AddressListComponent } from './components/address-list/address-list.component';
 
 
 
@@ -69,7 +75,13 @@ import { WasherDetailsComponent } from './components/washer-details/washer-detai
     TestingComponent,
     AfterWashOrderDetailsComponent,
     RatingPageComponent,
-    WasherDetailsComponent
+    WasherDetailsComponent,
+    RestPasswordComponent,
+    RestPasswordFormComponent,
+    AdminSideBarComponent,
+    AdminListComponent,
+    CustomerListComponent,
+    AddressListComponent
 
   ],
   imports: [

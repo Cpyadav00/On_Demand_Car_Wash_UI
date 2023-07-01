@@ -25,7 +25,7 @@ updatePackage(){
 }
 
   getPackage(){
-    return this.http.get<any>(this.baseUrl+'GetAllPackage');
+    return this.http.get<any>('https://localhost:44354/api/Package/GetAllPackage');
   }
 
   getPackageById(id:number){

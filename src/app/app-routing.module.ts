@@ -28,6 +28,11 @@ import { AfterWashOrderDetailsComponent } from './components/after-wash-order-de
 import { ScheduledWashForCustomerComponent } from './components/scheduled-wash-for-customer/scheduled-wash-for-customer.component';
 import { RatingPageComponent } from './components/rating-page/rating-page.component';
 import { WasherDetailsComponent } from './components/washer-details/washer-details.component';
+import { RestPasswordComponent } from './components/rest-password/rest-password.component';
+import { RestPasswordFormComponent } from './components/rest-password-form/rest-password-form.component';
+import { CustomerListComponent } from './components/customer-list/customer-list.component';
+import { AdminListComponent } from './components/admin-list/admin-list.component';
+import { AddressListComponent } from './components/address-list/address-list.component';
 
 
 const routes: Routes = [
@@ -37,6 +42,9 @@ const routes: Routes = [
   {path:'signup', component:SignupComponent},
   {path:'contact', component:ContactUsComponent},
   {path:'testing', component:TestingComponent},
+  {path:'resetpassword', component:RestPasswordComponent},
+
+  {path:'login/restPasswordForm', component:RestPasswordFormComponent},
 
   {path:'admin', component:AdminDashboardComponent,canActivate:[AuthGuard]},
   {path:'admin/form', component:CustomerFormComponent,canActivate:[AuthGuard]},
@@ -46,6 +54,9 @@ const routes: Routes = [
   {path:'admin/allUsers', component:AllUsersComponent,canActivate:[AuthGuard]},
   {path:'admin/cars', component:CarsComponent,canActivate:[AuthGuard]},
   {path:'admin/washersList', component:WasherDetailsComponent,canActivate:[AuthGuard]},
+  {path:'admin/customerList', component:CustomerListComponent,canActivate:[AuthGuard]},
+  {path:'admin/adminList', component:AdminListComponent,canActivate:[AuthGuard]},
+  {path:'admin/addressList', component:AddressListComponent,canActivate:[AuthGuard]},
   {path:'admin/orders', component:InvoiceComponent,canActivate:[AuthGuard]},
   {path:'admin/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'admin/orders/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},

@@ -28,4 +28,8 @@ export class CarService {
     return this.http.delete<Car>(this.baseUrl+'DeleteCar/'+id);
     }
 
+    updateCar(obj:Car){
+      return this.http.put<Car>("https://localhost:44354/api/Car/UpdateCar",obj);
+    }
+
 }

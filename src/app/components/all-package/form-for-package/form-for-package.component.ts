@@ -31,7 +31,7 @@ ngOnInit(): void {
     this.serv.saveProduct(this.packageForm.value)
     .subscribe({
       next:(res=>{
-       this.toast.success({detail:"SUCCESS",summary:res.message,duration:5000});
+       this.toast.success({detail:"SUCCESS",summary:"Added Successfully",duration:5000});
        this.route.navigate(['admin/services'])
 
       }),
@@ -42,7 +42,7 @@ ngOnInit(): void {
   }
 
 
-  
+
 
 
 }

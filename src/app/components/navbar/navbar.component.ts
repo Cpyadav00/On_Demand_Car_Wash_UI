@@ -11,7 +11,7 @@ export class NavbarComponent {
   constructor(private auth:AuthService,
     private router:Router
     ){}
-
+    public fullName=this.auth.getFullNameFromToken();
     public role:string="";
   isLoggedIn(){
     if(this.auth.isLoggedIn())
@@ -21,6 +21,7 @@ export class NavbarComponent {
   }
   logout(){
     this.auth.signOut();
+    window.localStorage.clear();
   }
 
   isRole(){

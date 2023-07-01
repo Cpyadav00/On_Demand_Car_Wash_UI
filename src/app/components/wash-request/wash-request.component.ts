@@ -43,7 +43,7 @@ export class WashRequestComponent {
         //console.log(val2);
       })
     })
-   window.location.reload();
+ //  window.location.reload();
   }
 
   populate(item:OrderForm){

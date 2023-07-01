@@ -39,41 +39,52 @@ ngOnInit():void{
 }
 
 
- onSave(myformdata:NgForm){
+ onSave(){
  this.orderser.orderformobj.custId=this.id
 let givendate=new Date(this.orderser.orderformobj.isScheduledLater)
-let todayDate=new Date()
-let giventime=givendate.getHours()
-console.log(giventime-2)
 
-let time1=new Date('2018-04-07 09:00:00')
-let time2=new Date('2018-04-07 18:00:00')
+var message=isValidDateTime(givendate);
 
-if(givendate.getDate()>=todayDate.getDate() && giventime>time1.getHours() && giventime<time2.getHours()){
-  // && giventime<=time2.getHours() && giventime>todayDate.getHours()+1
-  if(givendate.getDate()==todayDate.getDate() && giventime>time1.getHours() && giventime<time2.getHours())
-  {
-    if(giventime>todayDate.getHours()+2){
-    this.orderview.setDataForPreview(this.orderser.orderformobj)
-    this.router.navigate(['/home','selectpackage','form','orderview'])
+if(message=="Valid")
+{
+  this.orderview.setDataForPreview(this.orderser.orderformobj)
+  this.router.navigate(['/home','selectpackage','form','orderview'])
+}
+else
+{
+  this.toast.error({detail:"ERROR",summary:message,duration:5000});
+}
+
+// function to validate date and time
+function isValidDateTime(dateTime: Date): string {
+  const currentDate = new Date();
+
+  // Check if date is greater than today
+  if (dateTime < currentDate) {
+    return "Date is not valid";
+  }
+
+  // Check if it's today's date and time is at least 3 hours from current time
+  if (dateTime.toDateString() === currentDate.toDateString()) {
+    const threeHoursLater = new Date(currentDate.getTime() + (3 * 60 * 60 * 1000));
+
+    if (dateTime < threeHoursLater) {
+      return "Time should 3hr from current time ";
     }
-   else{
-    this.toast.error({detail:"ERROR",summary:"Change Time To 3Hr From Now",duration:5000});
-   }
   }
-  else if(givendate.getDate()>todayDate.getDate() && giventime>time1.getHours() && giventime<time2.getHours())
-  {
-    this.orderview.setDataForPreview(this.orderser.orderformobj)
-    this.router.navigate(['/home','selectpackage','form','orderview'])
+
+  // Check if time is between 9am and 6pm
+  const startTime = new Date(dateTime.toDateString() + ' 09:00');
+  const endTime = new Date(dateTime.toDateString() + ' 18:00');
+
+  if (dateTime < startTime || dateTime > endTime) {
+    return "Service time is 9AM to 6PM";
   }
-  else
-  {
-    this.toast.error({detail:"ERROR",summary:"Service Time is 9AM to 6PM",duration:5000});
-  }
+
+  return "Valid";
 }
-else{
- this.toast.error({detail:"ERROR",summary:"Date is not valid",duration:5000});
-}
+
+
 
 
 

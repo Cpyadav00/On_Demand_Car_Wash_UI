@@ -12,4 +12,9 @@ export class AddressService {
   getAddressById(id:number){
 return this.http.get<Address>("https://localhost:44354/api/Address/GetAddress/"+id)
   }
+
+  getAllAddressList(){
+    return this.http.get<Address>("https://localhost:44354/api/Address/GetAllAddress")
+      }
+
 }

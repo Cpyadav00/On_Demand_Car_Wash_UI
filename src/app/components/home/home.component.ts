@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -7,7 +8,9 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-constructor( private auth:AuthService
+constructor(
+  private auth:AuthService,
+  public router:Router
 
 ){}
 
@@ -24,5 +27,11 @@ isLoggedIn(){
   return true;
   return false;
 }
+
+
+booking(){
+  this.router.navigate(['/home','selectpackage'])
+}
+
 
 }

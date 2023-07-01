@@ -10,7 +10,7 @@
     </h2>
 <div class="col-md-12 text-center">
   <ng-container>
-    <button type="submit" *ngIf="isLoggedIn" routerLink="selectpackage"
+    <button type="submit" *ngIf="isLoggedIn" (click)="booking()"
 class="btn btn-success btn-lg col-md-4 box " >
 Book Your Car Wash Now
 </button>
@@ -123,7 +123,7 @@ Book Your Car Wash Now
       <section id="titlesection">
         <div class="col-md-12 text-center">
           <ng-container>
-            <button type="submit" *ngIf="isLoggedIn" routerLink="selectpackage"
+            <button type="submit" *ngIf="isLoggedIn" (click)="booking()"
         class="btn btn-danger btn-lg col-md-4 box " >
         Book Your Car Wash Now
         </button>
@@ -158,7 +158,7 @@ Book Your Car Wash Now
 <p>Call Us- 1800-121-6532</p>
 
 
-<p>Email Us- support@xyz.com</p>
+<p>Email Us- sparklewashonline@gmail.com</p>
 
 			</div>
 

@@ -2,7 +2,14 @@
 <section class="navigation">
   <div class="nav-container">
     <div class="brand">
-      <a routerLink="home" >Sparkle Wash Online</a>
+
+      <ng-container *ngIf="isLoggedIn(); else loginTemplate">
+        <a routerLink="home">{{fullName}}</a>
+      </ng-container>
+
+      <ng-template #loginTemplate>
+        <a>Sparkle Wash Online</a>
+      </ng-template>
     </div>
     <nav>
       <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>

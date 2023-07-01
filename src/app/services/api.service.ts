@@ -23,6 +23,14 @@ export class ApiService {
     return this.http.get<any>(this.baseUrl+'UserDetail/GetWasherDetails');
   }
 
+  getCustomer(){
+    return this.http.get<any>(this.baseUrl+'UserDetail/GetCustomers');
+  }
+
+  getAdmin(){
+    return this.http.get<any>(this.baseUrl+'UserDetail/GetAdmins');
+  }
+
   getByIdUser(id:number){
     return this.http.get<any>(this.baseUrl+'UserDetail/GetUserById/'+id);
   }

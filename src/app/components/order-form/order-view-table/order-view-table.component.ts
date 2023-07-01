@@ -7,6 +7,7 @@ import { Package } from 'src/app/models/package.model';
 import { User } from 'src/app/models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { CarService } from 'src/app/services/car.service';
+import { InvoiveMailService } from 'src/app/services/invoive-mail.service';
 import { OrderViewTableService } from 'src/app/services/order-view-table.service';
 import { OrderformService } from 'src/app/services/orderform.service';
 import { ProductServiceService } from 'src/app/services/product-service.service';
@@ -91,7 +92,8 @@ private userStore:UserStoreService,
 private auth:AuthService,
 private packserv:ProductServiceService,
 private carserv:CarService,
-private toast:NgToastService
+private toast:NgToastService,
+private invoiveEmailserv:InvoiveMailService
   ){
 
   }
@@ -139,7 +141,13 @@ return formattedDateTime
       window.localStorage.setItem("carId", JSON.stringify(val.carId));
       window.localStorage.setItem("packageId", JSON.stringify(val.packageId));
       window.localStorage.setItem("addressId", JSON.stringify(val.addressId));
-       window.location.reload()
+
+      this.invoiveEmailserv.sendEmail(val.id).subscribe(
+        val=>{
+         // console.log(val);
+        }
+      )
+      window.location.reload()
     })
   }
 

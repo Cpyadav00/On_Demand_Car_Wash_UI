@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { OrderForm } from 'src/app/models/orderForm.model';
 import { AuthService } from 'src/app/services/auth.service';
+import { CarService } from 'src/app/services/car.service';
 import { OrderformService } from 'src/app/services/orderform.service';
 import { UserStoreService } from 'src/app/services/user-store.service';
 import { WashRequestService } from 'src/app/services/wash-request.service';
@@ -18,7 +19,8 @@ export class ScheduledWashComponent {
     private orderserv:OrderformService,
     private requestserv:WashRequestService,
     private userStore:UserStoreService,
-    private auth:AuthService
+    private auth:AuthService,
+    private carserv:CarService
   ){
     this.userStore.getId()
     .subscribe(val=>{
@@ -39,9 +41,17 @@ export class ScheduledWashComponent {
     this.orderserv.getOrderById(id)
     .subscribe(val1=>{
      val1.status="Delivered"
+      this.carserv.getCarById(val1.carId)
+      .subscribe(carVal=>{
+        carVal.status="Delivered"
+        this.carserv.updateCar(carVal)
+        .subscribe(updVal=>{
+          console.log(updVal);
+        })
+      })
       this.orderserv.updateOrder(val1)
       .subscribe(val2=>{
-        console.log(val2);
+       // console.log(val2);
       })
     })
     //window.location.reload();
@@ -52,6 +62,14 @@ export class ScheduledWashComponent {
     .subscribe(val1=>{
      val1.status="Delivered"
      val1.paymentStatus="Paid"
+     this.carserv.getCarById(val1.carId)
+     .subscribe(carVal=>{
+       carVal.status="Delivered"
+       this.carserv.updateCar(carVal)
+       .subscribe(updVal=>{
+         console.log(updVal);
+       })
+     })
       this.orderserv.updateOrder(val1)
       .subscribe(val2=>{
         console.log(val2);
