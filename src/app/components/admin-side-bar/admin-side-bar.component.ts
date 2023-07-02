@@ -34,5 +34,11 @@ this.router.navigate(['/admin','allUsers'])
                           packages(){
                             this.router.navigate(['/admin','services'])
                               }
+                              subscriber(){
+                                this.router.navigate(['/admin','subscriber'])
+                                  }
+                                  contact(){
+                                    this.router.navigate(['/admin','contactus'])
+                                      }
 
 }

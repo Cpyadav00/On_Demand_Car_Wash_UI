@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
 import { AllPackageComponent } from './components/all-package/all-package.component';
-import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
@@ -33,6 +31,10 @@ import { RestPasswordFormComponent } from './components/rest-password-form/rest-
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
 import { AdminListComponent } from './components/admin-list/admin-list.component';
 import { AddressListComponent } from './components/address-list/address-list.component';
+import { SubscriberComponent } from './components/subscriber/subscriber.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { ContactUsDisplayAdminComponent } from './components/contact-us-display-admin/contact-us-display-admin.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
@@ -54,9 +56,11 @@ const routes: Routes = [
   {path:'admin/allUsers', component:AllUsersComponent,canActivate:[AuthGuard]},
   {path:'admin/cars', component:CarsComponent,canActivate:[AuthGuard]},
   {path:'admin/washersList', component:WasherDetailsComponent,canActivate:[AuthGuard]},
+  {path:'admin/contactus', component:ContactUsDisplayAdminComponent,canActivate:[AuthGuard]},
   {path:'admin/customerList', component:CustomerListComponent,canActivate:[AuthGuard]},
   {path:'admin/adminList', component:AdminListComponent,canActivate:[AuthGuard]},
   {path:'admin/addressList', component:AddressListComponent,canActivate:[AuthGuard]},
+  {path:'admin/subscriber', component:SubscriberComponent,canActivate:[AuthGuard]},
   {path:'admin/orders', component:InvoiceComponent,canActivate:[AuthGuard]},
   {path:'admin/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'admin/orders/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},

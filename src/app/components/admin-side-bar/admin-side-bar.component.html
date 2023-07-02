@@ -2,29 +2,38 @@
     <div class="position-sticky">
       <div class="list-group list-group-flush mx-3">
 
-        <a  class="list-group-item list-group-item-action py-2 ripple" (click)="users()">
+        <a class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold">
+          <i class="fas fa-chart-line fa-fw me-3"></i><span>Profile</span>
+        </a>
+        <a  class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="users()">
           <i class="fas fa-chart-area fa-fw me-3"></i><span>List Of All Users</span>
         </a>
-        <a  class="list-group-item list-group-item-action py-2 ripple" (click)="admin()"
+        <a  class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="admin()"
         ><i class="fas fa-chart-line fa-fw me-3"></i><span>Admins</span></a
       >
-        <a  class="list-group-item list-group-item-action py-2 ripple" (click)="washer()"
+        <a  class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="washer()"
           ><i class="fas fa-lock fa-fw me-3"></i><span>Washers</span></a
         >
-        <a  class="list-group-item list-group-item-action py-2 ripple" (click)="packages()"
+        <a  class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="packages()"
         ><i class="fas fa-lock fa-fw me-3"></i><span>Services</span></a
       >
-        <a  class="list-group-item list-group-item-action py-2 ripple" (click)="customer()"
+        <a  class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="customer()"
         ><i class="fas fa-building fa-fw me-3"></i><span>Customers</span></a
       >
-        <a  class="list-group-item list-group-item-action py-2 ripple" (click)="orders()">
+        <a  class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="orders()">
           <i class="fas fa-chart-pie fa-fw me-3"></i><span>All Orders</span>
         </a>
-        <a  class="list-group-item list-group-item-action py-2 ripple" (click)="cars()"
+        <a  class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="cars()"
           ><i class="fas fa-chart-bar fa-fw me-3"></i><span>Cars</span></a
         >
-        <a  class="list-group-item list-group-item-action py-2 ripple" (click)="address()"
+        <a  class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="address()"
           ><i class="fas fa-globe fa-fw me-3"></i><span>Addresses</span></a
+        >
+        <a  class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="subscriber()"
+          ><i class="fas fa-globe fa-fw me-3"></i><span>Subscribers</span></a
+        >
+        <a  class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="contact()"
+          ><i class="fas fa-globe fa-fw me-3"></i><span>Contact Request</span></a
         >
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { OrderForm } from 'src/app/models/orderForm.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { CarService } from 'src/app/services/car.service';
@@ -20,7 +21,8 @@ export class ScheduledWashComponent {
     private requestserv:WashRequestService,
     private userStore:UserStoreService,
     private auth:AuthService,
-    private carserv:CarService
+    private carserv:CarService,
+    private router:Router
   ){
     this.userStore.getId()
     .subscribe(val=>{
@@ -81,6 +83,34 @@ export class ScheduledWashComponent {
   populate(item:OrderForm){
     this.orderserv.orderformobj=item
   }
+
+
+  pageSize: number = 7;
+    currentPage: number = 1;
+
+    get totalPages(): number {
+      return Math.ceil(this.order.length / this.pageSize);
+    }
+
+    get pagedUsers(): any[] {
+      const startIndex = (this.currentPage - 1) * this.pageSize;
+      const endIndex = startIndex + this.pageSize;
+      return this.order.slice(startIndex, endIndex);
+    }
+
+    get pages(): number[] {
+      return Array.from({ length: this.totalPages }, (_, index) => index + 1);
+    }
+
+    changePage(page: number): void {
+      if (page >= 1 && page <= this.totalPages) {
+        this.currentPage = page;
+      }
+      this.router.navigate(['/washer','scheduled'])
+    }
+
+
+
 
 
 }

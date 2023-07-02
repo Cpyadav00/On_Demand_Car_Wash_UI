@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
+import { ContactUs } from 'src/app/models/contactUs.model';
+import { ContactUsService } from 'src/app/services/contact-us.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -6,16 +11,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent {
+  constructor(
+    private contserv:ContactUsService,
+    private toast:NgToastService,
+    private router:Router
+  ){}
 
-  name!: string;
-  email!: string;
-  message!: string;
+ public contactUs:ContactUs=new ContactUs();
 
-  submitForm() {
+  submitForm(contactForm:NgForm) {
     // Here you can implement your desired logic, such as sending the form data to a backend server
-    console.log('Form submitted!');
-    console.log('Name:', this.name);
-    console.log('Email:', this.email);
-    console.log('Message:', this.message);
+if(contactForm.valid)
+{
+  //console.log(contactForm.value);
+  this.contserv.postContactUs(contactForm.value)
+  .subscribe({
+    next:(res=>{
+      this.toast.success({detail:"SUCCESS",summary:"Query Registered Successfully",duration:5000});
+     this.router.navigate(['/home'])
+      //window.location.reload();
+    }),
+    error:(err=>{
+      this.toast.error({detail:"ERROR",summary:"Something went wrong",duration:5000});
+    })
+  })
+}
+else
+alert("Form is not valid")
+
   }
+
+
+
 }

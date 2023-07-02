@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
 import { AllPackageComponent } from './components/all-package/all-package.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -42,6 +41,11 @@ import { AdminSideBarComponent } from './components/admin-side-bar/admin-side-ba
 import { AdminListComponent } from './components/admin-list/admin-list.component';
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
 import { AddressListComponent } from './components/address-list/address-list.component';
+import { SubscriberComponent } from './components/subscriber/subscriber.component';
+import { CustomerSideBarComponent } from './components/customer-side-bar/customer-side-bar.component';
+import { WasherSideBarComponent } from './components/washer-side-bar/washer-side-bar.component';
+import { ContactUsDisplayAdminComponent } from './components/contact-us-display-admin/contact-us-display-admin.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -81,7 +85,11 @@ import { AddressListComponent } from './components/address-list/address-list.com
     AdminSideBarComponent,
     AdminListComponent,
     CustomerListComponent,
-    AddressListComponent
+    AddressListComponent,
+    SubscriberComponent,
+    CustomerSideBarComponent,
+    WasherSideBarComponent,
+    ContactUsDisplayAdminComponent
 
   ],
   imports: [

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class CustomerListComponent {
 
   constructor(
     private api:ApiService,
-    private router:Router
+    private router:Router,
+    private toast:NgToastService
     ){}
 
     ngOnInit() {
@@ -24,17 +26,6 @@ export class CustomerListComponent {
 
 
     }
-
-
-  deletingUser(id:number){
-    this.api.deleteUser(id)
-    .subscribe({
-     next:(res=>{
-
-      window.location.reload();
-     })
-    })
-   }
 
 
    pageSize: number = 8;
@@ -61,5 +52,20 @@ export class CustomerListComponent {
      this.router.navigate(['/admin','customerList'])
    }
 
+
+   deleteUser(id:number){
+    if(confirm("Are you really want to delete this record ?"))
+  {
+    this.api.deleteUser(id)
+    .subscribe({
+      next:(res=>{
+        window.location.reload();
+      }),
+      error:(err=>{
+        this.toast.error({detail:"ERROR",summary:"Something went wrong",duration:5000});
+      })
+    })
+}
+}
 
 }
