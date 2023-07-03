@@ -18,4 +18,8 @@ export class WasherSideBarComponent {
      request(){
       this.router.navigate(['/washer','request'])
      }
+
+     profile(){
+      this.router.navigate(['/washer','profile'])
+     }
 }

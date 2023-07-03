@@ -1,40 +1,59 @@
-<body>
-  <div class="container-fluid full-height">
+
+<body >
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Total Requests Pending</h5>
-            <p class="card-text">15</p>
+<app-customer-side-bar></app-customer-side-bar>
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="container-fluid full-height">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card firstBox">
+                <div class="card-body">
+                  <h4 class="card-title text-center">Total Requests </h4>
+                  <h5 class="card-title">Total Requests Recived: </h5>
+                  <h5 class="card-title">Total Requests Delivered:</h5>
+                  <h5 class="card-title">Total Requests Pending:</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 " >
+              <div class="card firstBox">
+                <div class="card-body">
+                  <h4 class="card-title text-center">Total Revenue</h4>
+                  <h5 class="card-title">Total Package Price: </h5>
+                  <h5 class="card-title">Total Tax Recived:</h5>
+                  <h5 class="card-title">Net Total :</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-md-8">
+              <div class="card firstBox">
+                <div class="card-body">
+                  <h4 class="card-title text-center">Total Customers</h4>
+                  <h5 class="card-title">Total Customers: </h5>
+                  <h5 class="card-title">Total Customers Active:</h5>
+                  <h5 class="card-title">Total Customers InActive:</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 ">
+              <div class="card firstBox">
+                <div class="card-body">
+                  <h4 class="card-title text-center">Total Washers</h4>
+                  <h5 class="card-title">Total Washers: </h5>
+                  <h5 class="card-title">Total Washers Active:</h5>
+                  <h5 class="card-title">Total Washers InActive:</h5>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Total Revenue</h5>
-            <p class="card-text">$5000</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Total Active Customers</h5>
-            <p class="card-text">100</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Total Active Washers</h5>
-            <p class="card-text">25</p>
-          </div>
-        </div>
-      </div>
+      </main>
     </div>
   </div>
 </body>
+

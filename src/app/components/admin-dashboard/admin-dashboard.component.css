@@ -11,3 +11,22 @@ button
   margin-top: 15px;
 
 }
+
+.card {
+  margin-bottom: 50px;
+}
+
+.full-height {
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.firstBox{
+height: 250px;
+width: 400px;
+}
+
+

@@ -1,57 +1,57 @@
-<body *ngIf="isRole()">
+<body>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
   <div class="container-fluid">
     <div class="row">
 <app-admin-side-bar></app-admin-side-bar>
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div class="col-sm-10 main">
-          <h2 class="sub-header text-center">All Delivered Orders</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead class="thead-dark">
-                <tr>
-                  <th>Customer Name</th>
-                  <th>Phone Number</th>
-                  <th>Status</th>
-                  <th>Payment Status</th>
-                  <th>Total Cost</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of pagedRequests">
-                  <td>{{item.customerName}}</td>
-                  <td>{{item.phoneNumber}}</td>
-                  <td>{{item.status}}</td>
-                  <td>{{item.paymentStatus}}</td>
-                  <td>{{item.totalCost}}</td>
-                  <td>
-                    <button class="btn btn-secondary" routerLink="orderDetails" (click)="populate(item)">View Order Details</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+
+
+        <div class="container-fluid full-height">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card firstBox">
+                <div class="card-body">
+                  <h4 class="card-title text-center">Total Requests </h4>
+                  <h5 class="card-title">Total Requests Received: </h5>
+                  <h5 class="card-title">Total Requests Delivered:</h5>
+                  <h5 class="card-title">Total Requests Pending:</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 " >
+              <div class="card firstBox">
+                <div class="card-body">
+                  <h4 class="card-title text-center">Total Revenue</h4>
+                  <h5 class="card-title">Total Package Price: Rs {{revenue.packagePrice}}</h5>
+                  <h5 class="card-title">Total Tax Received: Rs {{revenue.tax}}</h5>
+                  <h5 class="card-title">Net Total : Rs {{revenue.netTotal}}</h5>
+                </div>
+              </div>
+            </div>
           </div>
-          <nav aria-label="Pagination">
-            <ul class="pagination justify-content-center">
-              <li class="page-item" [class.disabled]="currentPage === 1">
-                <a class="page-link"  (click)="changePage(1)">First</a>
-              </li>
-              <li class="page-item" [class.disabled]="currentPage === 1">
-                <a class="page-link"  (click)="changePage(currentPage - 1)">Previous</a>
-              </li>
-              <li class="page-item" *ngFor="let page of pages" [class.active]="currentPage === page">
-                <a class="page-link"  (click)="changePage(page)">{{page}}</a>
-              </li>
-              <li class="page-item" [class.disabled]="currentPage === totalPages">
-                <a class="page-link" (click)="changePage(currentPage + 1)">Next</a>
-              </li>
-              <li class="page-item" [class.disabled]="currentPage === totalPages">
-                <a class="page-link"  (click)="changePage(totalPages)">Last</a>
-              </li>
-            </ul>
-          </nav>
+          <div class="row ">
+            <div class="col-md-8">
+              <div class="card firstBox">
+                <div class="card-body">
+                  <h4 class="card-title text-center">Total Customers</h4>
+                  <h5 class="card-title">Total Customers: </h5>
+                  <h5 class="card-title">Total Customers Active:</h5>
+                  <h5 class="card-title">Total Customers InActive:</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 ">
+              <div class="card firstBox">
+                <div class="card-body">
+                  <h4 class="card-title text-center">Total Washers</h4>
+                  <h5 class="card-title">Total Washers: </h5>
+                  <h5 class="card-title">Total Washers Active:</h5>
+                  <h5 class="card-title">Total Washers InActive:</h5>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
 

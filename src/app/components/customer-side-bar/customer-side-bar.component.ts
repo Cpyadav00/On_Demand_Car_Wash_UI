@@ -14,4 +14,7 @@ constructor(
   scheduled(){
     this.router.navigate(['/customer','scheduled'])
    }
+   profile(){
+    this.router.navigate(['/customer','profile'])
+   }
 }

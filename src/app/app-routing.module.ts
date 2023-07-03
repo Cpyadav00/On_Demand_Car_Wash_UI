@@ -35,6 +35,10 @@ import { SubscriberComponent } from './components/subscriber/subscriber.componen
 import { SignupComponent } from './components/signup/signup.component';
 import { ContactUsDisplayAdminComponent } from './components/contact-us-display-admin/contact-us-display-admin.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/admin-dashboard/profile/profile.component';
+import { ProfileForUsersComponent } from './components/profile-for-users/profile-for-users.component';
+import { ProfileForWasherComponent } from './components/profile-for-washer/profile-for-washer.component';
+import { AllOrdersComponent } from './components/admin-dashboard/all-orders/all-orders.component';
 
 
 const routes: Routes = [
@@ -49,6 +53,7 @@ const routes: Routes = [
   {path:'login/restPasswordForm', component:RestPasswordFormComponent},
 
   {path:'admin', component:AdminDashboardComponent,canActivate:[AuthGuard]},
+  {path:'admin/profile', component:ProfileComponent,canActivate:[AuthGuard]},
   {path:'admin/form', component:CustomerFormComponent,canActivate:[AuthGuard]},
   {path:'admin/services', component:AllPackageComponent,canActivate:[AuthGuard]},
   {path:'admin/services/form', component:FormForPackageComponent,canActivate:[AuthGuard]},
@@ -62,11 +67,13 @@ const routes: Routes = [
   {path:'admin/addressList', component:AddressListComponent,canActivate:[AuthGuard]},
   {path:'admin/subscriber', component:SubscriberComponent,canActivate:[AuthGuard]},
   {path:'admin/orders', component:InvoiceComponent,canActivate:[AuthGuard]},
+  {path:'admin/completedOrders', component:AllOrdersComponent,canActivate:[AuthGuard]},
   {path:'admin/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'admin/orders/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
 
   {path:'customer', component:CustomerDashboardComponent,canActivate:[AuthGuard]},
   {path:'customer/rating', component:RatingPageComponent,canActivate:[AuthGuard]},
+  {path:'customer/profile', component:ProfileForUsersComponent,canActivate:[AuthGuard]},
   {path:'customer/scheduled', component:ScheduledWashForCustomerComponent,canActivate:[AuthGuard]},
   {path:'customer/scheduled/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'customer/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
@@ -74,10 +81,10 @@ const routes: Routes = [
   {path:'washer', component:WasherDashboardComponent,canActivate:[AuthGuard]},
   {path:'washer/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'washer/request', component:WashRequestComponent,canActivate:[AuthGuard]},
+  {path:'washer/profile', component:ProfileForWasherComponent,canActivate:[AuthGuard]},
   {path:'washer/scheduled', component:ScheduledWashComponent,canActivate:[AuthGuard]},
   {path:'washer/request/orderDetails', component:OrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'washer/scheduled/orderDetails', component:OrderDetailsComponent,canActivate:[AuthGuard]},
-
   {path:'home/selectpackage', component:SelectPackageComponent,canActivate:[AuthGuard]},
   {path:'home/selectpackage/form/orderview', component:OrderViewTableComponent,canActivate:[AuthGuard]},
   {path:'home/selectpackage/form', component:OrderFormComponent,canActivate:[AuthGuard]},

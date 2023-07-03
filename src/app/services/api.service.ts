@@ -39,6 +39,10 @@ export class ApiService {
     return this.http.delete<any>(this.baseUrl+'UserDetail/DeleteUserDetails/'+id);
   }
 
+  updateuser(obj:any){
+    return this.http.put<any>(this.baseUrl+'UserDetail/UpdateUser/',obj);
+  }
+
   //User Services Ended
 
 

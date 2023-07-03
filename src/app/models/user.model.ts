@@ -1,6 +1,13 @@
+import { Address } from "./address.model";
+
 export class User{
-  id:number=0;
-  firstName:string="";
-  lastName:string="";
-  phoneNumber:number=0;
+  id!:number;
+  firstName!:string;
+  lastName!:string;
+  phoneNumber!:number;
+  permanentAddress!:string
+  age!: number;
+  gender!: string;
+  email!:string;
+  role!:string;
 }

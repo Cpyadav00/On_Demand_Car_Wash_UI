@@ -40,5 +40,13 @@ this.router.navigate(['/admin','allUsers'])
                                   contact(){
                                     this.router.navigate(['/admin','contactus'])
                                       }
+                                      profile(){
+
+                                        this.router.navigate(['/admin','profile'])
+                                          }
+                                          completed(){
+
+                                            this.router.navigate(['/admin','completedOrders'])
+                                              }
 
 }

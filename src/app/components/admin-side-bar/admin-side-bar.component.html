@@ -2,7 +2,7 @@
     <div class="position-sticky">
       <div class="list-group list-group-flush mx-3">
 
-        <a class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold">
+        <a class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="profile()">
           <i class="fas fa-chart-line fa-fw me-3"></i><span>Profile</span>
         </a>
         <a  class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="users()">
@@ -34,6 +34,9 @@
         >
         <a  class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="contact()"
           ><i class="fas fa-globe fa-fw me-3"></i><span>Contact Request</span></a
+        >
+        <a  class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="completed()"
+          ><i class="fas fa-globe fa-fw me-3"></i><span>Completed Orders</span></a
         >
       </div>
     </div>

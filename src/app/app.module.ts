@@ -46,6 +46,10 @@ import { CustomerSideBarComponent } from './components/customer-side-bar/custome
 import { WasherSideBarComponent } from './components/washer-side-bar/washer-side-bar.component';
 import { ContactUsDisplayAdminComponent } from './components/contact-us-display-admin/contact-us-display-admin.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/admin-dashboard/profile/profile.component';
+import { ProfileForUsersComponent } from './components/profile-for-users/profile-for-users.component';
+import { ProfileForWasherComponent } from './components/profile-for-washer/profile-for-washer.component';
+import { AllOrdersComponent } from './components/admin-dashboard/all-orders/all-orders.component';
 
 
 
@@ -89,7 +93,11 @@ import { HomeComponent } from './components/home/home.component';
     SubscriberComponent,
     CustomerSideBarComponent,
     WasherSideBarComponent,
-    ContactUsDisplayAdminComponent
+    ContactUsDisplayAdminComponent,
+    ProfileComponent,
+    ProfileForUsersComponent,
+    ProfileForWasherComponent,
+    AllOrdersComponent
 
   ],
   imports: [

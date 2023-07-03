@@ -40,4 +40,9 @@ allDeliveredOrderForAdmin(){
   return this.http.get<OrderForm>("https://localhost:44354/api/Order/AllDeliveredOrderForAdmin/")
 }
 
+
+revenue(){
+  return this.http.get<any>("https://localhost:44354/api/Order/Revenue")
+}
+
 }
