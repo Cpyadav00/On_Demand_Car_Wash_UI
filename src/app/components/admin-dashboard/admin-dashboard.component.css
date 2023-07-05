@@ -1,15 +1,9 @@
-
-
-button
-{
+button {
   margin-left: 10px;
 }
 
-
-
-#adduserbutton{
+#adduserbutton {
   margin-top: 15px;
-
 }
 
 .card {
@@ -17,16 +11,37 @@ button
 }
 
 .full-height {
-
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.firstBox{
-height: 250px;
-width: 400px;
+.firstBox {
+  height: 250px;
+  width: 400px;
 }
 
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+  button {
+    margin-left: 5px;
+  }
 
+  #adduserbutton {
+    margin-top: 10px;
+  }
+
+  .card {
+    margin-bottom: 30px;
+  }
+
+  .full-height {
+    min-height: 80vh;
+  }
+
+  .firstBox {
+    height: 200px;
+    width: 300px;
+  }
+}

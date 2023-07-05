@@ -29,6 +29,14 @@ ngOnInit(){
 populate(item:OrderForm){
   this.orderserv.orderformobj=item
 }
+cancelOrder(obj:OrderForm){
+  obj.status="Cancel";
+  this.orderserv.updateOrder(obj)
+  .subscribe(val=>{
+    //console.log(val);
+  })
+  // this.router.navigate(['/admin','orders'])
+}
 
 
 pageSize: number = 8;

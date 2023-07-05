@@ -34,7 +34,7 @@ export class AllOrdersComponent {
   populate(item:OrderForm){
     this.orderserv.orderformobj=item
   }
-
+  
 
   pageSize: number = 8;
   currentPage: number = 1;

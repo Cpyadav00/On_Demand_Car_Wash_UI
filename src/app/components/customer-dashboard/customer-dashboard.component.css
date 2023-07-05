@@ -31,5 +31,12 @@ width: 400px;
 .img{
   background-image: url("https://th.bing.com/th/id/R.d8aedc575ac32a253b5be5d25a52d598?rik=aLHj1W5emKA1Iw&riu=http%3a%2f%2fthewowstyle.com%2fwp-content%2fuploads%2f2015%2f02%2f1573618audi-car-images.jpg&ehk=EF0VdTd7DJoHQviRvsvMwZOxXN8XnzPldXhNrNT4Rl0%3d&risl=&pid=ImgRaw&r=0");
 }
+.back-img{
+  background-image: url("https://addressautoworkshop.com/wp-content/uploads/2020/05/Car-Wash-Image.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 90.5vh;
+  padding-top: 4%;
+}
 
 

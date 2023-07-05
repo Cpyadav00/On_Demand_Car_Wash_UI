@@ -57,11 +57,21 @@ export class RatingPageComponent {
     this.rating.ratingsOfWasher = this.washerRating;
     this.rating.washerId=this.orderserv.orderformobj.washerId
     this.rating.orderId=this.orderserv.orderformobj.id
-    this.ratingserv.addrating(this.rating)
-    .subscribe(val=>{
-      this.toast.success({detail:"SUCCESS",summary:"Rated Successfully",duration:5000});
+ if(this.rating.orderId>0)
+ {
+  this.ratingserv.addrating(this.rating)
+  .subscribe(val=>{
+    if(val){
+      console.log(val);
+    this.toast.success({detail:"SUCCESS",summary:"Rated Successfully",duration:5000});
+    }
 
-    })
+  })
+ }
+ else
+ {
+  this.toast.error({detail:"Error",summary:"Not Valid",duration:5000});
+ }
 
   }
 

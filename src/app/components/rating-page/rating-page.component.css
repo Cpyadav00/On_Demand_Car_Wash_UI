@@ -27,6 +27,16 @@ body{
 
 }
 
+.back-img{
+  background-image: url("https://addressautoworkshop.com/wp-content/uploads/2020/05/Car-Wash-Image.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 90.5vh;
+  padding-top: 4%;
+}
+
+
+
 
 .dot {
       height: 18px;

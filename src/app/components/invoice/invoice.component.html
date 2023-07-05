@@ -36,6 +36,8 @@
                 <td>{{item.totalCost}}</td>
                 <td>
                   <button class="btn btn-secondary" routerLink="orderDetails" (click)="populate(item)">View Invoice</button>
+                  <button class="btn btn-secondary ml-3" *ngIf="(item.status=='Not Delievered')"(click)="cancelOrder(item)">Cancel Order</button>
+
                 </td>
               </tr>
             </tbody>

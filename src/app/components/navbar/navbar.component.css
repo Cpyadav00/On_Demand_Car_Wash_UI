@@ -1,4 +1,4 @@
-@charset "UTF-8";
+/* Styles for navigation */
 .navigation {
   height: 70px;
   background: #262626;
@@ -155,4 +155,44 @@ article {
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+  .brand {
+    position: relative;
+    float: none;
+    padding: 10px;
+    text-align: center;
+  }
+  .brand a,
+  .brand a:visited {
+    line-height: 1;
+  }
+
+  nav {
+    float: none;
+    margin-top: 10px;
+    text-align: center;
+  }
+  nav ul li {
+    display: block;
+    float: none;
+    position: relative;
+  }
+  nav ul li a,
+  nav ul li a:visited {
+    padding: 10px;
+    line-height: 1;
+  }
+  nav ul li ul li a {
+    padding: 10px 15px;
+  }
+
+  .nav-mobile {
+    display: block;
+  }
+  #nav-toggle {
+    top: 15px;
+  }
 }

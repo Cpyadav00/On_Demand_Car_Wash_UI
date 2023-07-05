@@ -74,7 +74,7 @@ const routes: Routes = [
   {path:'admin/orders/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
 
   {path:'customer', component:CustomerDashboardComponent,canActivate:[AuthGuard]},
-  {path:'customer/rating', component:RatingPageComponent,canActivate:[AuthGuard]},
+  {path:'customer/completedOrders/rating', component:RatingPageComponent,canActivate:[AuthGuard]},
   {path:'customer/profile', component:ProfileForUsersComponent,canActivate:[AuthGuard]},
   {path:'customer/scheduled', component:ScheduledWashForCustomerComponent,canActivate:[AuthGuard]},
   {path:'customer/scheduled/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},

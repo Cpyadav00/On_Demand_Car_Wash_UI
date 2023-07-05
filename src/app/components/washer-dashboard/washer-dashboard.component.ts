@@ -48,6 +48,10 @@ ngOnInit() {
       else if (item.status == "Not Delievered") {
         this.notDeliveredOrders++;
       }
+      else if(item.status == "Cancel")
+      {
+      this.canceledOrders++;
+      }
      this.packagePrice+=(item.totalCost*10)/11;
      this.tax+=item.totalCost*.04
     }
