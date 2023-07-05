@@ -50,6 +50,8 @@ import { ProfileComponent } from './components/admin-dashboard/profile/profile.c
 import { ProfileForUsersComponent } from './components/profile-for-users/profile-for-users.component';
 import { ProfileForWasherComponent } from './components/profile-for-washer/profile-for-washer.component';
 import { AllOrdersComponent } from './components/admin-dashboard/all-orders/all-orders.component';
+import { CompletedOrderCustomerComponent } from './components/completed-order-customer/completed-order-customer.component';
+import { CompletedOrderWasherComponent } from './components/completed-order-washer/completed-order-washer.component';
 
 
 
@@ -97,7 +99,9 @@ import { AllOrdersComponent } from './components/admin-dashboard/all-orders/all-
     ProfileComponent,
     ProfileForUsersComponent,
     ProfileForWasherComponent,
-    AllOrdersComponent
+    AllOrdersComponent,
+    CompletedOrderCustomerComponent,
+    CompletedOrderWasherComponent
 
   ],
   imports: [

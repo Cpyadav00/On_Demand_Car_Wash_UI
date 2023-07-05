@@ -38,10 +38,6 @@ body {
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
 }
 
-#loginform{
-  margin-top: 3%;
-}
-
 
 .login-title {
   padding: 15px;
@@ -103,4 +99,12 @@ button {
 .btn--form:hover {
   background-color: #fdf2e9;
   color: #82d2f4;
+}
+
+.back-img{
+  background-image: url("https://addressautoworkshop.com/wp-content/uploads/2020/05/Car-Wash-Image.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 90.5vh;
+  padding-top: 4%;
 }

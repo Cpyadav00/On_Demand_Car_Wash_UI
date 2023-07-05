@@ -1,4 +1,4 @@
-<body>
+<div>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
   <div class="container-fluid">
@@ -6,16 +6,15 @@
 <app-admin-side-bar></app-admin-side-bar>
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
-
         <div class="container-fluid full-height">
           <div class="row">
             <div class="col-md-8">
               <div class="card firstBox">
                 <div class="card-body">
                   <h4 class="card-title text-center">Total Requests </h4>
-                  <h5 class="card-title">Total Requests Received: </h5>
-                  <h5 class="card-title">Total Requests Delivered:</h5>
-                  <h5 class="card-title">Total Requests Pending:</h5>
+                  <h5 class="card-title">Total Requests Received: {{totalOrders}}</h5>
+                  <h5 class="card-title">Total Requests Delivered: {{deliveredOrders}}</h5>
+                  <h5 class="card-title">Total Requests Pending: {{notDeliveredOrders}}</h5>
                 </div>
               </div>
             </div>
@@ -35,9 +34,9 @@
               <div class="card firstBox">
                 <div class="card-body">
                   <h4 class="card-title text-center">Total Customers</h4>
-                  <h5 class="card-title">Total Customers: </h5>
-                  <h5 class="card-title">Total Customers Active:</h5>
-                  <h5 class="card-title">Total Customers InActive:</h5>
+                  <h5 class="card-title">Total Customers: {{totalCustomer}} </h5>
+                  <h5 class="card-title">Total Customers Active: {{activeCustomer}}</h5>
+                  <h5 class="card-title">Total Customers InActive: {{notActiveCustomer}}</h5>
                 </div>
               </div>
             </div>
@@ -45,9 +44,9 @@
               <div class="card firstBox">
                 <div class="card-body">
                   <h4 class="card-title text-center">Total Washers</h4>
-                  <h5 class="card-title">Total Washers: </h5>
-                  <h5 class="card-title">Total Washers Active:</h5>
-                  <h5 class="card-title">Total Washers InActive:</h5>
+                  <h5 class="card-title">Total Washers: {{totalWasher}}</h5>
+                  <h5 class="card-title">Total Washers Active: {{activeWasher}}</h5>
+                  <h5 class="card-title">Total Washers InActive: {{notActiveWasher}}</h5>
                 </div>
               </div>
             </div>
@@ -59,4 +58,4 @@
       </main>
     </div>
   </div>
-</body>
+</div>

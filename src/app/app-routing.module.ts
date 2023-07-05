@@ -39,6 +39,8 @@ import { ProfileComponent } from './components/admin-dashboard/profile/profile.c
 import { ProfileForUsersComponent } from './components/profile-for-users/profile-for-users.component';
 import { ProfileForWasherComponent } from './components/profile-for-washer/profile-for-washer.component';
 import { AllOrdersComponent } from './components/admin-dashboard/all-orders/all-orders.component';
+import { CompletedOrderCustomerComponent } from './components/completed-order-customer/completed-order-customer.component';
+import { CompletedOrderWasherComponent } from './components/completed-order-washer/completed-order-washer.component';
 
 
 const routes: Routes = [
@@ -77,6 +79,7 @@ const routes: Routes = [
   {path:'customer/scheduled', component:ScheduledWashForCustomerComponent,canActivate:[AuthGuard]},
   {path:'customer/scheduled/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'customer/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
+  {path:'customer/completedOrders', component:CompletedOrderCustomerComponent,canActivate:[AuthGuard]},
 
   {path:'washer', component:WasherDashboardComponent,canActivate:[AuthGuard]},
   {path:'washer/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
@@ -85,6 +88,7 @@ const routes: Routes = [
   {path:'washer/scheduled', component:ScheduledWashComponent,canActivate:[AuthGuard]},
   {path:'washer/request/orderDetails', component:OrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'washer/scheduled/orderDetails', component:OrderDetailsComponent,canActivate:[AuthGuard]},
+  {path:'washer/completedOrders', component:CompletedOrderWasherComponent,canActivate:[AuthGuard]},
   {path:'home/selectpackage', component:SelectPackageComponent,canActivate:[AuthGuard]},
   {path:'home/selectpackage/form/orderview', component:OrderViewTableComponent,canActivate:[AuthGuard]},
   {path:'home/selectpackage/form', component:OrderFormComponent,canActivate:[AuthGuard]},

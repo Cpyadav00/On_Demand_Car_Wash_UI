@@ -22,4 +22,11 @@ export class WasherSideBarComponent {
      profile(){
       this.router.navigate(['/washer','profile'])
      }
+     dashboard(){
+      this.router.navigate(['/washer'])
+        }
+
+      completedOrders(){
+        this.router.navigate(['/washer','completedOrders'])
+          }
 }

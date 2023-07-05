@@ -1,60 +1,62 @@
-<body class="container-fluid">
+<div class="back-img">
+  <div class="container-fluid">
 
-  <div class="container" id="loginform">
-    <h2 class="login-title">Update Product</h2>
+    <div class="container" id="loginform">
+      <h2 class="login-title">Update Product</h2>
 
-    <form class="login-form" #myForm="ngForm" >
+      <form class="login-form" #myForm="ngForm" >
 
-      <div>
-        <input hidden="true"
-               name="id"
-               [value]="packserv.product.id"
-               />
-      </div>
+        <div>
+          <input hidden="true"
+                 name="id"
+                 [value]="packserv.product.id"
+                 />
+        </div>
 
-      <div>
-        <label for="name">Name </label>
-        <input
-               id="name"
-               type="name"
-               placeholder="Name"
-               name="name"
-               required
-               #name="ngModel"
-               [(ngModel)]="packserv.product.name"
-               />
-      </div>
-      <div>
-        <label for="price">Price </label>
-        <input
-               id="price"
-               type="number"
-               placeholder="Price"
-               name="price"
-               required
-               #price="ngModel"
-               [(ngModel)]="packserv.product.price"
-               />
-      </div>
-      <div>
-        <label for="description">Description </label>
-        <input
-               id="description"
-               type="text"
-               placeholder="Description"
-               name="description"
-               required
-               #description="ngModel"
-               [(ngModel)]="packserv.product.description"
-               />
-      </div>
-      <button
-       class="btn btn--form" type="submit"  id="loginButton"
-       routerLink=".." (click)="updateProduct(myForm)">
-        Save
-      </button>
-  </form>
+        <div>
+          <label for="name">Name </label>
+          <input
+                 id="name"
+                 type="name"
+                 placeholder="Name"
+                 name="name"
+                 required
+                 #name="ngModel"
+                 [(ngModel)]="packserv.product.name"
+                 />
+        </div>
+        <div>
+          <label for="price">Price </label>
+          <input
+                 id="price"
+                 type="number"
+                 placeholder="Price"
+                 name="price"
+                 required
+                 #price="ngModel"
+                 [(ngModel)]="packserv.product.price"
+                 />
+        </div>
+        <div>
+          <label for="description">Description </label>
+          <input
+                 id="description"
+                 type="text"
+                 placeholder="Description"
+                 name="description"
+                 required
+                 #description="ngModel"
+                 [(ngModel)]="packserv.product.description"
+                 />
+        </div>
+        <button
+         class="btn btn--form" type="submit"  id="loginButton"
+         routerLink=".." (click)="updateProduct(myForm)">
+          Save
+        </button>
+    </form>
+    </div>
+
   </div>
 
-</body>
-
+</div>

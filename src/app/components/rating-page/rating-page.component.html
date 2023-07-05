@@ -1,4 +1,4 @@
-<body>
+<div>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
   <div class="container-fluid">
@@ -14,7 +14,7 @@
             <span class="name mb-1 fw-500">First Name: {{user.firstName}}</span>
             <small class="text-black-50">Last Name: {{user.lastName}}</small>
             <small class="text-black-50 font-weight-bold">User Id: #{{user.id}}</small>
-            <small class="text-black-50 font-weight-bold">Washer Rating: {{averageRating*5}}☆</small>
+            <small class="text-black-50 font-weight-bold">Washer Rating: {{(averageRating*5).toFixed(1)}}☆</small>
 
             <div class="location mt-3">
               <span class="d-block"><i class="fa fa-map-marker start"></i> <small class="text-truncate ml-2">Phone Number: {{user.phoneNumber}}</small></span>
@@ -43,4 +43,4 @@
       </main>
     </div>
   </div>
-</body>
+</div>

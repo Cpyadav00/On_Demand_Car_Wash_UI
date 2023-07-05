@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { OrderformService } from 'src/app/services/orderform.service';
 
 @Component({
   selector: 'app-admin-side-bar',
@@ -10,6 +11,8 @@ export class AdminSideBarComponent {
 constructor(
   private router:Router
 ){}
+
+
   users(){
 this.router.navigate(['/admin','allUsers'])
   }
@@ -48,5 +51,12 @@ this.router.navigate(['/admin','allUsers'])
 
                                             this.router.navigate(['/admin','completedOrders'])
                                               }
+                                              dashboard(){
+                                                this.router.navigate(['/admin'])
+                                                  }
+
+
+
+
 
 }

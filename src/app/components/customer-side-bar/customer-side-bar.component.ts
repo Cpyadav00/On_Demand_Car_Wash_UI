@@ -17,4 +17,11 @@ constructor(
    profile(){
     this.router.navigate(['/customer','profile'])
    }
+   dashboard(){
+    this.router.navigate(['/customer'])
+      }
+
+      completedOrders(){
+        this.router.navigate(['/customer','completedOrders'])
+          }
 }

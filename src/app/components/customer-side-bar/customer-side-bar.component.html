@@ -3,11 +3,18 @@
     <div class="list-group list-group-flush mx-3">
 
 
+      <a class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="dashboard()">
+        <i class="fas fa-chart-line fa-fw me-3"></i><span>Dashboard</span>
+      </a>
+
       <a class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="profile()">
         <i class="fas fa-chart-line fa-fw me-3"></i><span>Profile</span>
       </a>
       <a  class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="scheduled()">
         <i class="fas fa-chart-area fa-fw me-3"></i><span>Scheduled Wash</span>
+      </a>
+      <a  class="list-group-item list-group-item-action py-2 ripple text-dark font-weight-bold" (click)="completedOrders()">
+        <i class="fas fa-chart-area fa-fw me-3"></i><span>Completed Orders</span>
       </a>
     </div>
   </div>

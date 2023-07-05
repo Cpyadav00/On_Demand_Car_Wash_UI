@@ -45,4 +45,16 @@ revenue(){
   return this.http.get<any>("https://localhost:44354/api/Order/Revenue")
 }
 
+
+
+getAllOrder(){
+  return this.http.get<any>("https://localhost:44354/api/Order/GetAllOrder")
+}
+getAllOrdersByIdForWasher(id:number){
+  return this.http.get<any>("https://localhost:44354/api/Order/GetAllOrdersByIdForWasher/"+id)
+}
+
+getAllOrdersByIdForCustomer(id:number){
+  return this.http.get<any>("https://localhost:44354/api/Order/GetAllOrdersByIdForCustomer/"+id)
+}
 }

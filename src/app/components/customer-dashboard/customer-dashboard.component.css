@@ -1,10 +1,35 @@
-#IdName{
-  margin-left: 900px;
- }
 
- body{
-  margin-top: 20px;
- }
- #rating{
-  margin-left: 20px;
- }
+
+button
+{
+  margin-left: 10px;
+}
+
+
+
+#adduserbutton{
+  margin-top: 15px;
+
+}
+
+.card {
+  margin-bottom: 50px;
+}
+
+.full-height {
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.firstBox{
+height: 250px;
+width: 400px;
+}
+.img{
+  background-image: url("https://th.bing.com/th/id/R.d8aedc575ac32a253b5be5d25a52d598?rik=aLHj1W5emKA1Iw&riu=http%3a%2f%2fthewowstyle.com%2fwp-content%2fuploads%2f2015%2f02%2f1573618audi-car-images.jpg&ehk=EF0VdTd7DJoHQviRvsvMwZOxXN8XnzPldXhNrNT4Rl0%3d&risl=&pid=ImgRaw&r=0");
+}
+
+

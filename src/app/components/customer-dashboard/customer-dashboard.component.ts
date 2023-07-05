@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { subscribeOn } from 'rxjs';
 import { OrderForm } from 'src/app/models/orderForm.model';
+import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { OrderformService } from 'src/app/services/orderform.service';
+import { ProductServiceService } from 'src/app/services/product-service.service';
 import { UserStoreService } from 'src/app/services/user-store.service';
 
 @Component({
@@ -11,35 +14,63 @@ import { UserStoreService } from 'src/app/services/user-store.service';
   styleUrls: ['./customer-dashboard.component.css']
 })
 export class CustomerDashboardComponent {
+  totalOrders:number=0
+  deliveredOrders:number=0
+  notDeliveredOrders:number=0
+  canceledOrders:number=0
 
-  public requests:any=[]
-  public fullName=this.auth.getFullNameFromToken();
-  public id:number=0
-  private order:OrderForm=new OrderForm()
+  netMoney:number=0
+  tax:number=0
+  packagePrice:number=0
 
-  constructor(
-    private auth:AuthService,
-    private orderserv:OrderformService,
-    private userStore:UserStoreService,
-    private router:Router
-    ){
-      this.userStore.getId()
-      .subscribe(val=>{
-        let idFromToken=this.auth.getId();
-        this.id=val || idFromToken
-      });
+  totalService:number=0
+  activeService:number=0
+  notActiveService:number=0
+
+  customerId:number=this.auth.getId();
+  requests:any=[]
+revenue:any
+constructor(private api:ApiService,
+  private auth:AuthService,
+  private userStore:UserStoreService,
+  private orderserv:OrderformService,
+  private packServ:ProductServiceService,
+  private router:Router
+  ){}
+
+ngOnInit() {
+this.orderserv.getAllOrdersByIdForCustomer(this.customerId)
+.subscribe(val=>{
+  this.totalOrders=val.length;
+  for(var item of val)
+  {
+    if (item.status == "Delivered") {
+      this.deliveredOrders++;
+    }
+    else if (item.status == "Not Delievered") {
+      this.notDeliveredOrders++;
+    }
+   this.netMoney+=item.totalCost;
+   this.packagePrice+=(item.totalCost*10)/11;
+   this.tax+=item.totalCost*.01
   }
 
-  ngOnInit(){
+})
 
-    this.orderserv.AllPreviousOrderForCustomer(this.id)
-    .subscribe(val=>{
-      this.requests=val;
-    })
+this.packServ.getPackage()
+.subscribe(val=>{
+this.totalService=val.length
+for(var item of val)
+{
+  if(item.status=="Available")
+  this.activeService++;
+  else
+  this.notActiveService++;
+}
+})
 
+}
 
-
-  }
 
   isRole(){
     if(this.auth.getRoleFromToken()=="Customer")
@@ -47,46 +78,6 @@ export class CustomerDashboardComponent {
     return false;
     }
 
-    changeToPaid(id:number){
-      this.orderserv.getOrderById(id)
-      .subscribe(val1=>{
-        val1.paymentStatus="Paid"
-        this.orderserv.updateOrder(val1)
-        .subscribe(val2=>{
-        })
-      })
-      window.location.reload();
-    }
-
-    populate(item:OrderForm){
-      this.orderserv.orderformobj=item
-    }
-
-
-
-   pageSize: number = 8;
-   currentPage: number = 1;
-
-   get totalPages(): number {
-     return Math.ceil(this.requests.length / this.pageSize);
-   }
-
-   get pagedUsers(): any[] {
-     const startIndex = (this.currentPage - 1) * this.pageSize;
-     const endIndex = startIndex + this.pageSize;
-     return this.requests.slice(startIndex, endIndex);
-   }
-
-   get pages(): number[] {
-     return Array.from({ length: this.totalPages }, (_, index) => index + 1);
-   }
-
-   changePage(page: number): void {
-     if (page >= 1 && page <= this.totalPages) {
-       this.currentPage = page;
-     }
-     this.router.navigate(['/customer'])
-   }
 
 
 }
