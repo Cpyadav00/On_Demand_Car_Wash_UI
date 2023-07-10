@@ -71,6 +71,7 @@ const routes: Routes = [
   {path:'admin/orders', component:InvoiceComponent,canActivate:[AuthGuard]},
   {path:'admin/completedOrders', component:AllOrdersComponent,canActivate:[AuthGuard]},
   {path:'admin/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
+  {path:'admin/completedOrders/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'admin/orders/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
 
   {path:'customer', component:CustomerDashboardComponent,canActivate:[AuthGuard]},
@@ -80,6 +81,7 @@ const routes: Routes = [
   {path:'customer/scheduled/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'customer/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'customer/completedOrders', component:CompletedOrderCustomerComponent,canActivate:[AuthGuard]},
+  {path:'customer/completedOrders/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},
 
   {path:'washer', component:WasherDashboardComponent,canActivate:[AuthGuard]},
   {path:'washer/orderDetails', component:AfterWashOrderDetailsComponent,canActivate:[AuthGuard]},

@@ -3,4 +3,5 @@ export class Package{
   name:string="";
   price:number=0;
   description:string="";
+  status:string="Available"
 }

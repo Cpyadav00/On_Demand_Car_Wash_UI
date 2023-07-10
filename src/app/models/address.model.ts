@@ -4,6 +4,6 @@ export class Address{
   city: string=""
  state:string=""
  pincode:string=""
-  country:string=""
+  country:string="India"
   custId!:number
 }

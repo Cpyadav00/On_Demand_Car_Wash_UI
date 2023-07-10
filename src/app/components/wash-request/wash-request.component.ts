@@ -47,6 +47,16 @@ export class WashRequestComponent {
     })
  //  window.location.reload();
   }
+  // disApprove(item:any)
+  // {
+  //  item.isDisApprove=true;
+  //  this.orderserv.updateOrder(item)
+  //     .subscribe(val2=>{
+  //       //console.log(val2);
+  //       window.location.reload();
+  //     })
+
+  // }
 
   populate(item:OrderForm){
     this.orderserv.orderformobj=item

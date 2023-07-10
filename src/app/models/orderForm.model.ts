@@ -7,7 +7,7 @@ export class OrderForm{
   isScheduledLater!:Date
   date_Time:Date=new Date()
   customerName:string="";
-  status!:string
+  status:string="Not Delivered";
   paymentStatus!:string
   paymentId!:number
   phoneNumber!:number

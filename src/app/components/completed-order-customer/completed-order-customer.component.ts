@@ -55,7 +55,7 @@ export class CompletedOrderCustomerComponent {
 
     populate(item:OrderForm){
       this.orderserv.orderformobj=item
-      this.router.navigate(['/customer','completedOrders','rating'])
+      //this.router.navigate(['/customer','completedOrders','rating'])
     }
 
 

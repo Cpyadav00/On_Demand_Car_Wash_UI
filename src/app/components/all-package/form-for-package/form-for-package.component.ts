@@ -22,7 +22,8 @@ ngOnInit(): void {
   this.packageForm = this.formBuilder.group({
     name: ['', Validators.required],
     price: ['', Validators.required],
-    description: ['', Validators.required]
+    description: ['', Validators.required],
+    status:['Available',Validators.required]
   });
 }
 
