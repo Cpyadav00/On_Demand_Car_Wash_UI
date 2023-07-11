@@ -21,7 +21,6 @@ import { OrderInvoiceComponent } from './components/order-invoice/order-invoice.
 import { WashRequestComponent } from './components/wash-request/wash-request.component';
 import { ScheduledWashComponent } from './components/scheduled-wash/scheduled-wash.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
-import { TestingComponent } from './components/testing/testing.component';
 import { AfterWashOrderDetailsComponent } from './components/after-wash-order-details/after-wash-order-details.component';
 import { ScheduledWashForCustomerComponent } from './components/scheduled-wash-for-customer/scheduled-wash-for-customer.component';
 import { RatingPageComponent } from './components/rating-page/rating-page.component';
@@ -49,7 +48,6 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'signup', component:SignupComponent},
   {path:'contact', component:ContactUsComponent},
-  {path:'testing', component:TestingComponent},
   {path:'resetpassword', component:RestPasswordComponent},
 
   {path:'login/restPasswordForm', component:RestPasswordFormComponent},

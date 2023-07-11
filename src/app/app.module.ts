@@ -31,7 +31,6 @@ import {  GooglePayButtonModule } from '@google-pay/button-angular';
 import { ScheduledWashComponent } from './components/scheduled-wash/scheduled-wash.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { ScheduledWashForCustomerComponent } from './components/scheduled-wash-for-customer/scheduled-wash-for-customer.component';
-import { TestingComponent } from './components/testing/testing.component';
 import { AfterWashOrderDetailsComponent } from './components/after-wash-order-details/after-wash-order-details.component';
 import { RatingPageComponent } from './components/rating-page/rating-page.component';
 import { WasherDetailsComponent } from './components/washer-details/washer-details.component';
@@ -82,7 +81,6 @@ import { CompletedOrderWasherComponent } from './components/completed-order-wash
     ScheduledWashComponent,
     OrderDetailsComponent,
     ScheduledWashForCustomerComponent,
-    TestingComponent,
     AfterWashOrderDetailsComponent,
     RatingPageComponent,
     WasherDetailsComponent,
