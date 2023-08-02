@@ -39,14 +39,17 @@ ngOnInit():void{
 }
 
 
- onSave(){
- this.orderser.orderformobj.custId=this.id
+onSave(myForm: NgForm) {
+  // Check if the form is valid before submitting
+  if (myForm.valid) {
+  this.orderser.orderformobj.custId=this.id
 let givendate=new Date(this.orderser.orderformobj.isScheduledLater)
 
 var message=isValidDateTime(givendate);
 
 if(message=="Valid")
 {
+
   this.orderview.setDataForPreview(this.orderser.orderformobj)
   this.router.navigate(['/home','selectpackage','form','orderview'])
 }
@@ -88,6 +91,10 @@ function isValidDateTime(dateTime: Date): string {
 
 
 
+ }
+ else{
+  this.toast.error({detail:"ERROR",summary:"Required Field is Missing",duration:5000});
+ }
 
 
   }

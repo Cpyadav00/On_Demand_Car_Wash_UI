@@ -37,7 +37,7 @@ if(contactForm.valid)
   })
 }
 else
-alert("Form is not valid")
+this.toast.error({detail:"ERROR",summary:"Required Field is Missing",duration:5000});
 
   }
 

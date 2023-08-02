@@ -54,7 +54,7 @@ export class RestPasswordFormComponent implements OnInit {
       })
     }
     else{
-      alert("Your form is invalid");
+      this.toast.error({detail:"ERROR",summary:"Required Field is Missing",duration:5000});
     }
   }
 

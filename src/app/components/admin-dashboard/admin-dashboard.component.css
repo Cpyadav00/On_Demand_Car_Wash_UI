@@ -9,6 +9,9 @@ button {
 .card {
   margin-bottom: 50px;
 }
+main{
+  background-color: rgb(189, 247, 224);
+}
 
 .full-height {
   min-height: 100vh;

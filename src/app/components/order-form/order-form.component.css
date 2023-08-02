@@ -30,7 +30,7 @@ body {
   width: 550px;
   margin: auto;
   padding: 36px;
-  background-color: #ffffff;
+  background-color: #a0f5b3;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
@@ -87,4 +87,13 @@ body {
 .btn--form:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(130, 210, 244, 0.5);
+}
+
+
+.back-img{
+  background-image: url("https://images.pexels.com/photos/4870691/pexels-photo-4870691.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 98.3vh;
+  /* padding-top: 4%; */
 }
