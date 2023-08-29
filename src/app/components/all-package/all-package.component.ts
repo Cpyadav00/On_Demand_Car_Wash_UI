@@ -53,7 +53,7 @@ populatePackage(selectedPackage:Package){
 this.productserv.product=selectedPackage;
 }
 
-pageSize: number = 6;
+pageSize: number = 5;
   currentPage: number = 1;
 
   get totalPages(): number {

@@ -40,6 +40,7 @@ import { ProfileForWasherComponent } from './components/profile-for-washer/profi
 import { AllOrdersComponent } from './components/admin-dashboard/all-orders/all-orders.component';
 import { CompletedOrderCustomerComponent } from './components/completed-order-customer/completed-order-customer.component';
 import { CompletedOrderWasherComponent } from './components/completed-order-washer/completed-order-washer.component';
+import { TestingComponent } from './components/testing/testing.component';
 
 
 const routes: Routes = [
@@ -49,6 +50,8 @@ const routes: Routes = [
   {path:'signup', component:SignupComponent},
   {path:'contact', component:ContactUsComponent},
   {path:'resetpassword', component:RestPasswordComponent},
+  {path:'testing', component:TestingComponent},
+
 
   {path:'login/restPasswordForm', component:RestPasswordFormComponent},
 

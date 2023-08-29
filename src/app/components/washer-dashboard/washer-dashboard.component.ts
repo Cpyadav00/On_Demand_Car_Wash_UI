@@ -45,7 +45,7 @@ ngOnInit() {
       if (item.status == "Delivered") {
         this.deliveredOrders++;
       }
-      else if (item.status == "Not Delievered") {
+      else if (item.status == "Not Delivered") {
         this.notDeliveredOrders++;
       }
       else if(item.status == "Cancel")

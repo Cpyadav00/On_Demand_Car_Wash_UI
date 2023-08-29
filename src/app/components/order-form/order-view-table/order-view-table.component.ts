@@ -20,6 +20,42 @@ import { UserStoreService } from 'src/app/services/user-store.service';
 })
 export class OrderViewTableComponent {
 
+
+
+  public fullNames:string=''
+  public date:number=0
+  public totalCostToPay:string=''
+  public package:Package=new Package()
+  public car:Car=new Car()
+  public user:User=new User()
+
+public orderobj:OrderForm=new OrderForm()
+  constructor(
+public orderser:OrderformService,
+public orderview:OrderViewTableService,
+private packserv:ProductServiceService,
+private carserv:CarService,
+private toast:NgToastService,
+private invoiveEmailserv:InvoiveMailService
+  ){
+
+  }
+
+  ngOnInit(){
+    this.orderobj=this.orderview.sendDataForPreview()
+    //this.orderobj.customerName=this.fullNames
+
+    this.packserv.getPackageById(this.orderobj.packageId)
+    .subscribe(val=>
+      {
+
+        this.package=val
+        this.totalCostToPay=val.price.toFixed(2)
+      });
+
+ console.log(this.totalCostToPay);
+  }
+
   paymetRequest:google.payments.api.PaymentDataRequest={
     apiVersion:2,
     apiVersionMinor:0,
@@ -41,13 +77,13 @@ export class OrderViewTableComponent {
     ],
     merchantInfo:{
       merchantId:'12344578901234567890',
-      merchantName:'Demo Merchant'
+      merchantName:'Sparkle Wash Online'
     },
     transactionInfo:{
       totalPriceStatus:'FINAL',
       totalPriceLabel:'Total',
-      totalPrice:'0.10',
-      currencyCode:'EUR',
+      totalPrice:'2000',
+      currencyCode:'INR',
       countryCode:'BR'
     },
     callbackIntents:['PAYMENT_AUTHORIZATION']
@@ -77,46 +113,6 @@ export class OrderViewTableComponent {
 
 
 
-
-  public fullNames:string=''
-  public date:number=0
-  public package:Package=new Package()
-  public car:Car=new Car()
-  public user:User=new User()
-
-public orderobj:OrderForm=new OrderForm()
-  constructor(
-public orderser:OrderformService,
-public orderview:OrderViewTableService,
-private userStore:UserStoreService,
-private auth:AuthService,
-private packserv:ProductServiceService,
-private carserv:CarService,
-private toast:NgToastService,
-private invoiveEmailserv:InvoiveMailService
-  ){
-
-  }
-
-  ngOnInit(){
-
-    this.userStore.getFullNameFromStore()
-    .subscribe(val=>{
-      let fullNameFromToken=this.auth.getFullNameFromToken();
-      this.fullNames=val || fullNameFromToken
-    });
-
-    this.orderobj=this.orderview.sendDataForPreview()
-    //this.orderobj.customerName=this.fullNames
-
-    this.packserv.getPackageById(this.orderobj.packageId)
-    .subscribe(val=>
-      {
-        this.package=val
-      });
-
-  }
-
   convertdate(){
   const date1 = new Date(this.orderobj.isScheduledLater);
 
@@ -144,7 +140,7 @@ return formattedDateTime
 
       this.invoiveEmailserv.sendEmail(val.id).subscribe(
         val=>{
-         // console.log(val);
+        //  console.log(val);
         }
       )
       window.location.reload()
