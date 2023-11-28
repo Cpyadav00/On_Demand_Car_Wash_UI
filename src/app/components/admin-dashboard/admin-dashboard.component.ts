@@ -30,9 +30,12 @@ constructor(private api:ApiService,
   private userStore:UserStoreService,
   private orderserv:OrderformService,
   private router:Router
-  ){}
+  ){
+    
+  }
 
 ngOnInit() {
+
 this.orderserv.revenue()
 .subscribe(val=>{
   this.revenue=val;

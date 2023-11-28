@@ -38,7 +38,7 @@ this.orderser.orderformobj.totalCost=selectedPackage.price
 
 }
 
-pageSize: number = 5;
+pageSize: number = 3;
 currentPage: number = 1;
 
 get totalPages(): number {
